@@ -58,6 +58,18 @@
     <Compile Include="form\AddSizeDetail.Designer.cs">
       <DependentUpon>AddSizeDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\SaleDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\SaleDetail.Designer.cs">
+      <DependentUpon>SaleDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mennu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +83,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\AddSizeDetail.resx">
       <DependentUpon>AddSizeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\SaleDetail.resx">
+      <DependentUpon>SaleDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mennu.resx">
       <DependentUpon>Mennu.cs</DependentUpon>
