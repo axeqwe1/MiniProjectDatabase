@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MiniProjectDatabase
 {
-    public partial class Mennu : Form
+    public partial class MainMenu : Form
     {
-        public Mennu()
+        public MainMenu()
         {
             InitializeComponent();
         }

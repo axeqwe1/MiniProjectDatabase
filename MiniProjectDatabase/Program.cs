@@ -16,7 +16,7 @@ namespace MiniProjectDatabase
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Mennu());
+            Application.Run(new MainMenu());
         }
     }
 }

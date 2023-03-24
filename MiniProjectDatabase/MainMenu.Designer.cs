@@ -1,7 +1,7 @@
 ﻿
 namespace MiniProjectDatabase
 {
-    partial class Mennu
+    partial class MainMenu
     {
         /// <summary>
         /// Required designer variable.
