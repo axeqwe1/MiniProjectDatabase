@@ -31,9 +31,9 @@ namespace MiniProjectDatabase
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +56,16 @@ namespace MiniProjectDatabase
             this.panel1.Size = new System.Drawing.Size(936, 764);
             this.panel1.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(429, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 46);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Menu";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(70, 663);
@@ -74,17 +84,7 @@ namespace MiniProjectDatabase
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(437, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Menu";
-            // 
-            // Form1
+            // Mennu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,7 +93,7 @@ namespace MiniProjectDatabase
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form1";
+            this.Name = "Mennu";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);

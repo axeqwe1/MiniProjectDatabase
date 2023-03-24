@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="form\AddMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\AddMenu.Designer.cs">
+      <DependentUpon>AddMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\AddSizeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\AddSizeDetail.Designer.cs">
+      <DependentUpon>AddSizeDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mennu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form\AddMenu.resx">
+      <DependentUpon>AddMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\AddSizeDetail.resx">
+      <DependentUpon>AddSizeDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mennu.resx">
       <DependentUpon>Mennu.cs</DependentUpon>
     </EmbeddedResource>
