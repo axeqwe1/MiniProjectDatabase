@@ -126,7 +126,7 @@ namespace MiniProjectDatabase.form
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(171, 9);
+            this.label5.Location = new System.Drawing.Point(163, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(172, 39);
             this.label5.TabIndex = 9;
