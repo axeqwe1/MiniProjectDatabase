@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEmlpoyee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmlpoyee.Designer.cs">
+      <DependentUpon>AddEmlpoyee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMenu.Designer.cs">
+      <DependentUpon>AddMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditEmlpyee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEmlpyee.Designer.cs">
+      <DependentUpon>EditEmlpyee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditMenu.Designer.cs">
+      <DependentUpon>EditMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\AddMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +102,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddEmlpoyee.resx">
+      <DependentUpon>AddEmlpoyee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMenu.resx">
+      <DependentUpon>AddMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEmlpyee.resx">
+      <DependentUpon>EditEmlpyee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditMenu.resx">
+      <DependentUpon>EditMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\AddMenu.resx">
       <DependentUpon>AddMenu.cs</DependentUpon>
     </EmbeddedResource>
