@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiniProjectDatabase
+namespace MiniProjectDatabase.form.SaleForm
 {
-    public partial class AddEmlpoyee : Form
+    public partial class SaleForm : Form
     {
-        public AddEmlpoyee()
+        public SaleForm()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace MiniProjectDatabase
 {
-    partial class MainMenu
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -68,23 +68,24 @@ namespace MiniProjectDatabase
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(70, 663);
+            this.button1.Location = new System.Drawing.Point(70, 732);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 52);
             this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
+            this.button1.Text = "Menu List";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(194, 663);
+            this.button2.Location = new System.Drawing.Point(206, 732);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 52);
             this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
+            this.button2.Text = "Employee LIST";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // Mennu
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,7 +94,7 @@ namespace MiniProjectDatabase
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Mennu";
+            this.Name = "Main";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);

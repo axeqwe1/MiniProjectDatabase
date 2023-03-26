@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,88 +47,80 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEmlpoyee.cs">
+    <Compile Include="asset\database\database.cs" />
+    <Compile Include="form\EmployeeForm\EditEmlpyee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEmlpoyee.Designer.cs">
-      <DependentUpon>AddEmlpoyee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddMenu.Designer.cs">
-      <DependentUpon>AddMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EditEmlpyee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditEmlpyee.Designer.cs">
+    <Compile Include="form\EmployeeForm\EditEmlpyee.Designer.cs">
       <DependentUpon>EditEmlpyee.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditMenu.cs">
+    <Compile Include="form\MenuForm\EditMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditMenu.Designer.cs">
+    <Compile Include="form\MenuForm\EditMenu.Designer.cs">
       <DependentUpon>EditMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\AddMenu.cs">
+    <Compile Include="form\MenuForm\AddMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\AddMenu.Designer.cs">
+    <Compile Include="form\MenuForm\AddMenu.Designer.cs">
       <DependentUpon>AddMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\AddSizeDetail.cs">
+    <Compile Include="form\SaleForm\SaleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\AddSizeDetail.Designer.cs">
+    <Compile Include="form\SaleForm\SaleForm.Designer.cs">
+      <DependentUpon>SaleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Size\AddSizeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Size\AddSizeDetail.Designer.cs">
       <DependentUpon>AddSizeDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\Employee.cs">
+    <Compile Include="form\EmployeeForm\AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\Employee.Designer.cs">
-      <DependentUpon>Employee.cs</DependentUpon>
+    <Compile Include="form\EmployeeForm\AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\SaleDetail.cs">
+    <Compile Include="form\SaleForm\SaleHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\SaleDetail.Designer.cs">
-      <DependentUpon>SaleDetail.cs</DependentUpon>
+    <Compile Include="form\SaleForm\SaleHistory.Designer.cs">
+      <DependentUpon>SaleHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenu.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddEmlpoyee.resx">
-      <DependentUpon>AddEmlpoyee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddMenu.resx">
-      <DependentUpon>AddMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditEmlpyee.resx">
+    <EmbeddedResource Include="form\EmployeeForm\EditEmlpyee.resx">
       <DependentUpon>EditEmlpyee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditMenu.resx">
+    <EmbeddedResource Include="form\MenuForm\EditMenu.resx">
       <DependentUpon>EditMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\AddMenu.resx">
+    <EmbeddedResource Include="form\MenuForm\AddMenu.resx">
       <DependentUpon>AddMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\AddSizeDetail.resx">
+    <EmbeddedResource Include="form\SaleForm\SaleForm.resx">
+      <DependentUpon>SaleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Size\AddSizeDetail.resx">
       <DependentUpon>AddSizeDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\Employee.resx">
-      <DependentUpon>Employee.cs</DependentUpon>
+    <EmbeddedResource Include="form\EmployeeForm\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\SaleDetail.resx">
-      <DependentUpon>SaleDetail.cs</DependentUpon>
+    <EmbeddedResource Include="form\SaleForm\SaleHistory.resx">
+      <DependentUpon>SaleHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -137,6 +130,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -152,9 +146,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="asset\database\" />
     <Folder Include="asset\img\" />
     <Folder Include="asset\lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mobile-navigator-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\360_F_296055218_RXc721N9fSYIz3sEV7QALYquMVP31jdJ.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

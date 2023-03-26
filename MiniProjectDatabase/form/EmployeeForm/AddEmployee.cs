@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MiniProjectDatabase.form
 {
-    public partial class Employee : Form
+    public partial class AddEmployee : Form
     {
-        public Employee()
+        public AddEmployee()
         {
             InitializeComponent();
         }
