@@ -33,9 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Oracle.DataAccess, Version=2.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,11 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="asset\database\database.cs" />
-    <Compile Include="form\EmployeeForm\EditEmlpyee.cs">
+    <Compile Include="form\EmployeeForm\EditEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\EmployeeForm\EditEmlpyee.Designer.cs">
-      <DependentUpon>EditEmlpyee.cs</DependentUpon>
+    <Compile Include="form\EmployeeForm\EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="form\MenuForm\EditMenu.cs">
       <SubType>Form</SubType>
@@ -98,8 +102,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="form\EmployeeForm\EditEmlpyee.resx">
-      <DependentUpon>EditEmlpyee.cs</DependentUpon>
+    <EmbeddedResource Include="form\EmployeeForm\EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\MenuForm\EditMenu.resx">
       <DependentUpon>EditMenu.cs</DependentUpon>

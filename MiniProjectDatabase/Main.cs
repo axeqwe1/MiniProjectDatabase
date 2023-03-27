@@ -22,5 +22,12 @@ namespace MiniProjectDatabase
             AddMenu fs = new AddMenu();
             fs.Visible = true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddEmployee AddEMPForm = new AddEmployee();
+            AddEMPForm.Show();
+            this.Hide();
+        }
     }
 }
