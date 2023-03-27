@@ -51,10 +51,15 @@ namespace MiniProjectDatabase.form
                         orcl.Connection = db.OracleConnect;
                         rowaffeted = orcl.ExecuteNonQuery();
                         db.OracleConnect.Close();
-                    }catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.Message,"ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("SIZE_ID ซ้ำกัน กรูณาใช้ ID อื่น","WARNING",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
 

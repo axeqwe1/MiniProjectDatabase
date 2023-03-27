@@ -38,6 +38,7 @@ namespace MiniProjectDatabase.form
             this.label3 = new System.Windows.Forms.Label();
             this.sizedatagrid = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.size_edit_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sizedatagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@ namespace MiniProjectDatabase.form
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 106);
+            this.label1.Location = new System.Drawing.Point(21, 107);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 25);
             this.label1.TabIndex = 0;
@@ -54,7 +55,7 @@ namespace MiniProjectDatabase.form
             // sizeName_text
             // 
             this.sizeName_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sizeName_text.Location = new System.Drawing.Point(126, 103);
+            this.sizeName_text.Location = new System.Drawing.Point(130, 104);
             this.sizeName_text.Name = "sizeName_text";
             this.sizeName_text.Size = new System.Drawing.Size(129, 30);
             this.sizeName_text.TabIndex = 1;
@@ -63,7 +64,7 @@ namespace MiniProjectDatabase.form
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 70);
+            this.label2.Location = new System.Drawing.Point(54, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 25);
             this.label2.TabIndex = 2;
@@ -72,16 +73,16 @@ namespace MiniProjectDatabase.form
             // sizeID_text
             // 
             this.sizeID_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sizeID_text.Location = new System.Drawing.Point(126, 67);
+            this.sizeID_text.Location = new System.Drawing.Point(130, 68);
             this.sizeID_text.Name = "sizeID_text";
             this.sizeID_text.Size = new System.Drawing.Size(129, 30);
             this.sizeID_text.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(80, 167);
+            this.button1.Location = new System.Drawing.Point(69, 181);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 57);
+            this.button1.Size = new System.Drawing.Size(99, 43);
             this.button1.TabIndex = 4;
             this.button1.Text = "ADD";
             this.button1.UseVisualStyleBackColor = true;
@@ -89,9 +90,9 @@ namespace MiniProjectDatabase.form
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(185, 167);
+            this.button2.Location = new System.Drawing.Point(585, 292);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 57);
+            this.button2.Size = new System.Drawing.Size(99, 43);
             this.button2.TabIndex = 5;
             this.button2.Text = "CANCEL";
             this.button2.UseVisualStyleBackColor = true;
@@ -127,11 +128,21 @@ namespace MiniProjectDatabase.form
             this.label4.TabIndex = 8;
             this.label4.Text = "List";
             // 
+            // size_edit_btn
+            // 
+            this.size_edit_btn.Location = new System.Drawing.Point(192, 181);
+            this.size_edit_btn.Name = "size_edit_btn";
+            this.size_edit_btn.Size = new System.Drawing.Size(99, 43);
+            this.size_edit_btn.TabIndex = 9;
+            this.size_edit_btn.Text = "EDIT";
+            this.size_edit_btn.UseVisualStyleBackColor = true;
+            // 
             // AddSizeDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 285);
+            this.ClientSize = new System.Drawing.Size(696, 347);
+            this.Controls.Add(this.size_edit_btn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.sizedatagrid);
             this.Controls.Add(this.label3);
@@ -161,5 +172,6 @@ namespace MiniProjectDatabase.form
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView sizedatagrid;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button size_edit_btn;
     }
 }

@@ -28,34 +28,70 @@ namespace MiniProjectDatabase.form
         {
             
             db.openconnect();
-            OracleCommand orcl1,orcl2;
-            string command;
+            OracleCommand orcl1;
+            string command1,command2;
             int rowaffeted;
-            OracleDataAdapter da1,da2;
+            OracleDataAdapter da2;
             DataSet ds = new DataSet();
+            DataSet ds2 = new DataSet();
 
-            da1 = new OracleDataAdapter($"SELECT * FROM ENVY_MENU WHERE menu_id = '{menuID_Text.Text}'",db.OracleConnect);
-
-            rowaffeted = da1.Fill(ds,"menu");
+            
+            da2 = new OracleDataAdapter($"SELECT * FROM ENVY_MENU_SIZE WHERE menu_id = '{menuID_Text.Text}' AND size_id = '{menuSize_Box.SelectedValue}'",db.OracleConnect);
+            rowaffeted = da2.Fill(ds,"menu");
 
             if (menuID_Text.Text == "" || menuName_Text.Text == "" || menuPrice_Text.Text == "" || menuSize_Box.SelectedIndex < 0  ||menuType_Text.Text == "" ||pictureBox1.Image == null)
             {
                 MessageBox.Show("กรุณากรอกข้อมูลให้ครับ", "warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (menuPrice_Text.Text is int)
+            else
             {
-                MessageBox.Show("ราคาใส่ได้แค่ตัวเลขเท่านั้น");
-                menuPrice_Text.Focus();
+                if (rowaffeted == 0)
+                {
+                    command1 = "INSERT INTO ENVY_MENU (menu_id,menuname,detail,type,picture)";
+                    command1 += $"VALUES('{menuID_Text.Text}','{menuName_Text.Text}','{menuDetail_Text.Text}','{menuType_Text.Text}','{filename}')";
+                    command2 = "INSERT INTO ENVY_MENU_SIZE (menu_id,size_id,price)";
+                    command2 += $"VALUES('{menuID_Text.Text}','{menuSize_Box.SelectedValue}','{menuPrice_Text.Text}')";
+                    saveimage(filename);
+
+                    orcl1 = new OracleCommand();
+
+                    try
+                    {
+                        orcl1.CommandType = CommandType.Text;
+                        orcl1.CommandText = command1;
+                        orcl1.Connection = db.OracleConnect;
+                        rowaffeted = orcl1.ExecuteNonQuery();
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    try
+                    {
+                        orcl1.CommandType = CommandType.Text;
+                        orcl1.CommandText = command2;
+                        orcl1.Connection = db.OracleConnect;
+                        rowaffeted = orcl1.ExecuteNonQuery();
+                        MessageBox.Show("เพิ่มข้อมูลสำเร็จ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("มี MenuID และ SizeID นี้แล้ว","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
             }
-            if(rowaffeted == 0)
-            {
-                command = "INSERT INTO ENVY_MENU (menu_id,menuname,detail,type,picture)";
-                command += $"VALUES('{menuID_Text.Text}','{menuName_Text.Text}','{menuDetail_Text.Text}','{menuType_Text.Text}','{filename}')";
-            }
+            
+            
+           
 
 
 
-            saveimage(filename);
+
 
         }
 
@@ -129,7 +165,6 @@ namespace MiniProjectDatabase.form
         }
         private void chosefile_btn_Click(object sender, EventArgs e)
         {
-
             Bitmap img;
             int size = -1;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
