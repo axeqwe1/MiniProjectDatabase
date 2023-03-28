@@ -12,46 +12,64 @@ using System.Data.OracleClient;
 
 namespace MiniProjectDatabase
 {
-    public partial class EditMenu : Form
+    public partial class EditEmployee : Form
     {
         database db = new database();
+        public string Id { get; set; }     
 
-        public EditMenu(string idt)
+        public EditEmployee(string id)
         {
             InitializeComponent();
 
             db.openconnect();
 
             // Populate the form with the data of the selected employee
-            string query = "SELECT * FROM ENVY_MENU WHERE MENU_ID = '" + idt + "'";
+            string query = "SELECT * FROM ENVY_EMPLOYEE WHERE EMP_ID = '" + id + "'";
             OracleCommand cmd = new OracleCommand(query, db.OracleConnect);
             OracleDataReader reader = cmd.ExecuteReader();
 
             if (reader.Read())
             {
-                Emp_id.Text = reader["MENU_ID"].ToString();
-                Fname.Text = reader["MENUNAME"].ToString();
-                Lname.Text = reader["DETAIL"].ToString();
-                Address.Text = reader["TYPE"].ToString();
+                txtID_EMP_EDIT.Text = reader["EMP_ID"].ToString();
+                txtFNAME_EMP_EDIT.Text = reader["FNAME"].ToString();
+                txtLNAME_EMP_EDIT.Text = reader["LNAME"].ToString();
+                txtTEL_EMP_EDIT.Text = reader["TEL"].ToString();
+                txtADDRESS_EMP_EDIT.Text = reader["ADDRESS"].ToString();
             }
 
             reader.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public EditEmployee()
         {
-            if (Emp_id.Text == "" || Fname.Text == "" || Lname.Text == "" ||
-                 Address.Text == "")
+            InitializeComponent();
+
+        }
+
+        private void EditEmployee_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CANCEL_EDIT_EMP_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void SAVE_EDIT_EMP_Click(object sender, EventArgs e)
+        {
+            if (txtID_EMP_EDIT.Text == "" || txtFNAME_EMP_EDIT.Text == "" || txtLNAME_EMP_EDIT.Text == "" ||
+                 txtTEL_EMP_EDIT.Text == "" || txtADDRESS_EMP_EDIT.Text == "")
             {
                 MessageBox.Show("กรุณากรอกข้อมูลที่จะแก้ไขให้ครบถ้วน");
-                Emp_id.Focus();
+                txtID_EMP_EDIT.Focus();
             }
             else if (MessageBox.Show("คุณต้องการที่จะแก้ไขข้อมูลใช่หรือไม่?", "แก้ไขข้อมูลพนักงาน", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 OracleCommand orclcmd = new OracleCommand();
-                string temp_sql =  $"UPDATE ENVY_MENU SET MENUNAME = '{Fname.Text}', DETAIL = '{Lname.Text}'," +
-                    $"TYPE = '{Address.Text}' WHERE MENU_ID = '{Emp_id.Text}'";
+                string temp_sql = $"UPDATE ENVY_EMPLOYEE SET FNAME = '{txtFNAME_EMP_EDIT.Text}', LNAME = '{txtLNAME_EMP_EDIT.Text}'," +
+                    $"TEL = '{txtTEL_EMP_EDIT.Text}', ADDRESS = '{txtADDRESS_EMP_EDIT.Text}' WHERE EMP_ID = '{txtID_EMP_EDIT.Text}'";
                 try
                 {
                     db.openconnect();
@@ -62,12 +80,12 @@ namespace MiniProjectDatabase
                     MessageBox.Show("แก้ไขข้อมูลสำเร็จ");
                     this.DialogResult = DialogResult.OK;
                     this.Close();
-
+                    
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    Emp_id.Focus();
+                    txtID_EMP_EDIT.Focus();
                 }
             }
         }

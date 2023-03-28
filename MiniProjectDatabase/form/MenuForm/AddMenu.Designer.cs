@@ -62,7 +62,7 @@ namespace MiniProjectDatabase.form
             this.label1.Location = new System.Drawing.Point(27, 186);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 25);
+            this.label1.Size = new System.Drawing.Size(91, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "MenuName";
             // 
@@ -73,7 +73,7 @@ namespace MiniProjectDatabase.form
             this.label2.Location = new System.Drawing.Point(68, 225);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 25);
+            this.label2.Size = new System.Drawing.Size(50, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Detail";
             // 
@@ -93,7 +93,7 @@ namespace MiniProjectDatabase.form
             this.menuName_Text.Location = new System.Drawing.Point(165, 186);
             this.menuName_Text.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.menuName_Text.Name = "menuName_Text";
-            this.menuName_Text.Size = new System.Drawing.Size(232, 30);
+            this.menuName_Text.Size = new System.Drawing.Size(232, 26);
             this.menuName_Text.TabIndex = 3;
             // 
             // image
@@ -103,7 +103,7 @@ namespace MiniProjectDatabase.form
             this.image.Location = new System.Drawing.Point(448, 145);
             this.image.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.image.Name = "image";
-            this.image.Size = new System.Drawing.Size(65, 25);
+            this.image.Size = new System.Drawing.Size(52, 20);
             this.image.TabIndex = 4;
             this.image.Text = "image";
             // 
@@ -125,7 +125,7 @@ namespace MiniProjectDatabase.form
             this.label3.Location = new System.Drawing.Point(87, 306);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 25);
+            this.label3.Size = new System.Drawing.Size(43, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Type";
             // 
@@ -135,7 +135,7 @@ namespace MiniProjectDatabase.form
             this.menuType_Text.Location = new System.Drawing.Point(165, 306);
             this.menuType_Text.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.menuType_Text.Name = "menuType_Text";
-            this.menuType_Text.Size = new System.Drawing.Size(232, 30);
+            this.menuType_Text.Size = new System.Drawing.Size(232, 26);
             this.menuType_Text.TabIndex = 7;
             // 
             // addmenu_btn
@@ -178,7 +178,7 @@ namespace MiniProjectDatabase.form
             this.label4.Location = new System.Drawing.Point(87, 342);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 25);
+            this.label4.Size = new System.Drawing.Size(44, 20);
             this.label4.TabIndex = 11;
             this.label4.Text = "Price";
             // 
@@ -188,7 +188,7 @@ namespace MiniProjectDatabase.form
             this.menuPrice_Text.Location = new System.Drawing.Point(165, 342);
             this.menuPrice_Text.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.menuPrice_Text.Name = "menuPrice_Text";
-            this.menuPrice_Text.Size = new System.Drawing.Size(96, 30);
+            this.menuPrice_Text.Size = new System.Drawing.Size(96, 26);
             this.menuPrice_Text.TabIndex = 12;
             this.menuPrice_Text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.menuPrice_Text_KeyPress);
             // 
@@ -199,7 +199,7 @@ namespace MiniProjectDatabase.form
             this.label5.Location = new System.Drawing.Point(90, 380);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 25);
+            this.label5.Size = new System.Drawing.Size(40, 20);
             this.label5.TabIndex = 13;
             this.label5.Text = "Size";
             // 
@@ -210,7 +210,7 @@ namespace MiniProjectDatabase.form
             this.menuSize_Box.Location = new System.Drawing.Point(165, 378);
             this.menuSize_Box.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.menuSize_Box.Name = "menuSize_Box";
-            this.menuSize_Box.Size = new System.Drawing.Size(180, 33);
+            this.menuSize_Box.Size = new System.Drawing.Size(180, 28);
             this.menuSize_Box.TabIndex = 14;
             // 
             // label6
@@ -220,7 +220,7 @@ namespace MiniProjectDatabase.form
             this.label6.Location = new System.Drawing.Point(402, 39);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(190, 46);
+            this.label6.Size = new System.Drawing.Size(154, 37);
             this.label6.TabIndex = 15;
             this.label6.Text = "AddMenu";
             // 
@@ -265,6 +265,7 @@ namespace MiniProjectDatabase.form
             this.editmenu_btn.TabIndex = 20;
             this.editmenu_btn.Text = "EDIT";
             this.editmenu_btn.UseVisualStyleBackColor = true;
+            this.editmenu_btn.Click += new System.EventHandler(this.editmenu_btn_Click);
             // 
             // menuID_Text
             // 
@@ -272,7 +273,7 @@ namespace MiniProjectDatabase.form
             this.menuID_Text.Location = new System.Drawing.Point(165, 146);
             this.menuID_Text.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.menuID_Text.Name = "menuID_Text";
-            this.menuID_Text.Size = new System.Drawing.Size(103, 30);
+            this.menuID_Text.Size = new System.Drawing.Size(103, 26);
             this.menuID_Text.TabIndex = 22;
             // 
             // label7
@@ -282,13 +283,13 @@ namespace MiniProjectDatabase.form
             this.label7.Location = new System.Drawing.Point(48, 149);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 25);
+            this.label7.Size = new System.Drawing.Size(66, 20);
             this.label7.TabIndex = 21;
             this.label7.Text = "MenuID";
             // 
             // AddMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 810);
             this.Controls.Add(this.menuID_Text);

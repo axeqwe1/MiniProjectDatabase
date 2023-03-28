@@ -23,6 +23,13 @@ namespace MiniProjectDatabase
             fs.Visible = true;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddEmployee AddEMPForm = new AddEmployee();
+            AddEMPForm.Show();
+            this.Hide();
+        }
+
         private void GenerateUserControl()
         {
             flowLayoutPanel1.Controls.Clear();
