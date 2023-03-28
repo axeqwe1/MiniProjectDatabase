@@ -287,22 +287,46 @@ namespace MiniProjectDatabase.form
 
         private void editmenu_btn_Click(object sender, EventArgs e)
         {
-            if (menu_datagrid.SelectedCells.Count > 0)
+            OracleDataAdapter da1;
+            DataSet ds1 = new DataSet();
+            int rowaffected;
+            string temp_sql1 = "SELECT envy_menu.menu_id,envy_menu.menuname,envy_menu.detail,envy_menu_size.price,envy_size.sizename,envy_menu.type ";
+            temp_sql1 += "FROM envy_menu_size inner join envy_menu on envy_menu_size.menu_id = envy_menu.menu_id ";
+            temp_sql1 += "inner join envy_size on envy_size.size_id = envy_menu_size.size_id ";
+            temp_sql1 += $"WHERE envy_menu.menu_id = '{menuID_Text.Text}' ";
+            temp_sql1 += "order by envy_menu.menu_id ASC";
+            da1 = new OracleDataAdapter(temp_sql1,db.OracleConnect);
+
+            rowaffected = da1.Fill(ds1,"menusize");
+
+            if (rowaffected > 0)
             {
-                int rowIndex = menu_datagrid.SelectedCells[0].RowIndex;
-                if (menu_datagrid.SelectedRows.Count > 0 && menu_datagrid.SelectedCells.Count == menu_datagrid.Columns.Count)
-                {
-                    string idt = menu_datagrid.Rows[rowIndex].Cells["MENU_ID"].Value.ToString();
-                    EditMenu editEMP = new EditMenu(idt);
-                    editEMP.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("กรุณาเลือกแถวข้อมูลทั้งหมดที่จะแก้ไข");
-                }
+                EditMenu editEMP = new EditMenu(menuID_Text.Text);
+                editEMP.Show();
+                
             }
+            else
+            {
+                MessageBox.Show("ไม่พบรหัสสินค้า");
+            }
+            
+            /* if (menu_datagrid.SelectedCells.Count > 0)
+             {
+                 int rowIndex = menu_datagrid.SelectedCells[0].RowIndex;
+                 if (menu_datagrid.SelectedRows.Count > 0 && menu_datagrid.SelectedCells.Count == menu_datagrid.Columns.Count)
+                 {
+                     string idt = menu_datagrid.Rows[rowIndex].Cells["MENU_ID"].Value.ToString();
+                     EditMenu editEMP = new EditMenu(idt);
+                     editEMP.Show();
+                     this.Hide();
+                 }
+                 else
+                 {
+                     MessageBox.Show("กรุณาเลือกแถวข้อมูลทั้งหมดที่จะแก้ไข");
+                 }
+            */
         }
+        
 
         private void radioButton1_Click(object sender, EventArgs e)
         {

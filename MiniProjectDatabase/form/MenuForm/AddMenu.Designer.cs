@@ -156,12 +156,12 @@ namespace MiniProjectDatabase.form
             // menu_datagrid
             // 
             this.menu_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.menu_datagrid.Location = new System.Drawing.Point(111, 503);
+            this.menu_datagrid.Location = new System.Drawing.Point(53, 503);
             this.menu_datagrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.menu_datagrid.Name = "menu_datagrid";
             this.menu_datagrid.RowHeadersWidth = 51;
             this.menu_datagrid.RowTemplate.Height = 24;
-            this.menu_datagrid.Size = new System.Drawing.Size(749, 239);
+            this.menu_datagrid.Size = new System.Drawing.Size(843, 239);
             this.menu_datagrid.TabIndex = 9;
             this.menu_datagrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.menu_datagrid_CellClick);
             // 
