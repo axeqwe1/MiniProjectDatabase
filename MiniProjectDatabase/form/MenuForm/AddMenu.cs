@@ -262,5 +262,24 @@ namespace MiniProjectDatabase.form
             AddSizeDetail fs = new AddSizeDetail();
             fs.Visible = true;
         }
+
+        private void editmenu_btn_Click(object sender, EventArgs e)
+        {
+            if (menu_datagrid.SelectedCells.Count > 0)
+            {
+                int rowIndex = menu_datagrid.SelectedCells[0].RowIndex;
+                if (menu_datagrid.SelectedRows.Count > 0 && menu_datagrid.SelectedCells.Count == menu_datagrid.Columns.Count)
+                {
+                    string idt = menu_datagrid.Rows[rowIndex].Cells["MENU_ID"].Value.ToString();
+                    EditMenu editEMP = new EditMenu(idt);
+                    editEMP.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("กรุณาเลือกแถวข้อมูลทั้งหมดที่จะแก้ไข");
+                }
+            }
+        }
     }
 }
