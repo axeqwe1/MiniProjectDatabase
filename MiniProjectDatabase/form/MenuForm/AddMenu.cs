@@ -244,9 +244,10 @@ namespace MiniProjectDatabase.form
             c3.Width = 120;
             menu_datagrid.Columns[0].HeaderText = "รหัสสินค้า";
             menu_datagrid.Columns[1].HeaderText = "ชื่อสินค้า";
-            menu_datagrid.Columns[2].HeaderText = "รายระเอียด";
+            menu_datagrid.Columns[2].HeaderText = "รายละเอียด";
             menu_datagrid.Columns[3].HeaderText = "ราคา";
             menu_datagrid.Columns[4].HeaderText = "ขนาด";
+            menu_datagrid.Columns[5].HeaderText = "ประเภท";
             menuSize_Box.DataSource = ds2.Tables["size"];
             menuSize_Box.DisplayMember = "SIZENAME";
             menuSize_Box.ValueMember = "SIZE_ID";

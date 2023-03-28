@@ -20,23 +20,25 @@ namespace MiniProjectDatabase
         string filename;
         database db = new database();
 
-        public EditMenu(string idt)
+        public EditMenu(string id)
         {
             InitializeComponent();
 
             db.openconnect();
 
             // Populate the form with the data of the selected employee
-            string query = "SELECT * FROM ENVY_MENU WHERE MENU_ID = '" + idt + "'";
+            string query = "SELECT * FROM ENVY_MENU WHERE MENU_ID = '" + id + "'";
             OracleCommand cmd = new OracleCommand(query, db.OracleConnect);
             OracleDataReader reader = cmd.ExecuteReader();
 
             if (reader.Read())
             {
-                Emp_id.Text = reader["MENU_ID"].ToString();
-                Fname.Text = reader["MENUNAME"].ToString();
-                Lname.Text = reader["DETAIL"].ToString();
-                Address.Text = reader["TYPE"].ToString();
+                txtMenu_ID.Text = reader["MENU_ID"].ToString();
+                txtMenu_Name.Text = reader["MENUNAME"].ToString();
+                txtMenu_Detail.Text = reader["DETAIL"].ToString();
+                //txtMenu_Price.Text = reader["PRICE"].ToString();
+                txtMenu_Type.Text = reader["TYPE"].ToString();
+                //comboMenu_SIze.SelectedItem = reader["SIZENAME"].ToString();  
             }
             reader.Close();
         }
@@ -146,24 +148,27 @@ namespace MiniProjectDatabase
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Emp_id.Text == "" || Fname.Text == "" || Lname.Text == "" ||
-                 Address.Text == "")
+            if (txtMenu_ID.Text == "" || txtMenu_Name.Text == "" || txtMenu_Detail.Text == "" ||
+                 txtMenu_Type.Text == "")
             {
                 MessageBox.Show("กรุณากรอกข้อมูลที่จะแก้ไขให้ครบถ้วน");
-                Emp_id.Focus();
+                txtMenu_ID.Focus();
             }
             else if (MessageBox.Show("คุณต้องการที่จะแก้ไขข้อมูลใช่หรือไม่?", "แก้ไขข้อมูลพนักงาน", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 OracleCommand orclcmd = new OracleCommand();
-                string temp_sql =  $"UPDATE ENVY_MENU SET MENUNAME = '{Fname.Text}', DETAIL = '{Lname.Text}'," +
-                    $"TYPE = '{Address.Text}', PICTURE = '{filename}' WHERE MENU_ID = '{Emp_id.Text}'";
+                string temp_sql1 =  $"UPDATE ENVY_MENU SET MENUNAME = '{txtMenu_Name.Text}', DETAIL = '{txtMenu_Detail.Text}'," +
+                    $"TYPE = '{txtMenu_Type.Text}', PICTURE = '{filename}' WHERE MENU_ID = '{txtMenu_ID.Text}'";
+
+                string temp_sql2 = $"UPDATE ENVY_MENU_SIZE SET PRICE = '{txtMenu_Price.Text}', WHERE MENU_ID,SIZE_ID = '{txtMenu_ID.Text}', '{comboMenu_SIze.SelectedValue}' ";
                 saveimage(filename);
                 try
                 {
                     db.openconnect();
                     orclcmd.CommandType = CommandType.Text;
-                    orclcmd.CommandText = temp_sql;
+                    orclcmd.CommandText = temp_sql1;
+                    orclcmd.CommandText = temp_sql2;
                     orclcmd.Connection = db.OracleConnect;
                     int rowaffected = orclcmd.ExecuteNonQuery();
                     MessageBox.Show("แก้ไขข้อมูลสำเร็จ");
@@ -174,9 +179,24 @@ namespace MiniProjectDatabase
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    Emp_id.Focus();
+                    txtMenu_ID.Focus();
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
