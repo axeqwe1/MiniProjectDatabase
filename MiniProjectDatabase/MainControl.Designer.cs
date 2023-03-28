@@ -1,7 +1,7 @@
 ﻿
 namespace MiniProjectDatabase
 {
-    partial class UserControl1
+    partial class MainControl
     {
         /// <summary> 
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MiniProjectDatabase
 {
-    public partial class UserControl1 : UserControl
+    public partial class MainControl : UserControl
     {
-        public UserControl1()
+        public MainControl()
         {
             InitializeComponent();
         }

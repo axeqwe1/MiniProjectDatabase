@@ -52,11 +52,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="asset\database\database.cs" />
+    <Compile Include="asset\lib\MenuList.cs" />
     <Compile Include="form\EmployeeForm\EditEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\EmployeeForm\EditEmployee.Designer.cs">
       <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\etc\ChoseSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\etc\ChoseSize.Designer.cs">
+      <DependentUpon>ChoseSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\etc\ChoseSizeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="form\etc\ChoseSizeControl.Designer.cs">
+      <DependentUpon>ChoseSizeControl.cs</DependentUpon>
     </Compile>
     <Compile Include="form\MenuForm\EditMenu.cs">
       <SubType>Form</SubType>
@@ -70,11 +83,11 @@
     <Compile Include="form\MenuForm\AddMenu.Designer.cs">
       <DependentUpon>AddMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl1.cs">
+    <Compile Include="MainControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="MainControl.Designer.cs">
+      <DependentUpon>MainControl.cs</DependentUpon>
     </Compile>
     <Compile Include="form\SaleForm\SaleForm.cs">
       <SubType>Form</SubType>
@@ -111,6 +124,12 @@
     <EmbeddedResource Include="form\EmployeeForm\EditEmployee.resx">
       <DependentUpon>EditEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\etc\ChoseSize.resx">
+      <DependentUpon>ChoseSize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\etc\ChoseSizeControl.resx">
+      <DependentUpon>ChoseSizeControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\MenuForm\EditMenu.resx">
       <DependentUpon>EditMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,8 +161,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="MainControl.resx">
+      <DependentUpon>MainControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -160,7 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="asset\img\" />
-    <Folder Include="asset\lib\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-mobile-navigator-96.png" />
