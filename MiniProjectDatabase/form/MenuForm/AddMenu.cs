@@ -41,7 +41,7 @@ namespace MiniProjectDatabase.form
 
             if (menuID_Text.Text == "" || menuName_Text.Text == "" || menuPrice_Text.Text == "" || menuSize_Box.SelectedIndex < 0  ||menuType_Text.Text == "" ||pictureBox1.Image == null)
             {
-                MessageBox.Show("กรุณากรอกข้อมูลให้ครับ", "warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
