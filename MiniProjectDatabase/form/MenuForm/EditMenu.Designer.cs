@@ -224,7 +224,7 @@ namespace MiniProjectDatabase
             this.Controls.Add(this.txtMenu_Name);
             this.Controls.Add(this.txtMenu_ID);
             this.Name = "EditMenu";
-            this.Text = "EditMenu";
+            this.Text = "หน้าต่างแก้ไขเมนู";
             this.Load += new System.EventHandler(this.EditMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

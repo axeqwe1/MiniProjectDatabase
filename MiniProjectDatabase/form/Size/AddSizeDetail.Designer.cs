@@ -182,7 +182,7 @@ namespace MiniProjectDatabase.form
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddSizeDetail";
-            this.Text = "AddSizeDetail";
+            this.Text = "หน้าต่างเพิ่มขนาดเมนู";
             this.Load += new System.EventHandler(this.AddSizeDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sizedatagrid)).EndInit();
             this.ResumeLayout(false);

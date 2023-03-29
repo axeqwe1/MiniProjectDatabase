@@ -174,7 +174,7 @@ namespace MiniProjectDatabase
             this.Controls.Add(this.txtFNAME_EMP_EDIT);
             this.Controls.Add(this.txtID_EMP_EDIT);
             this.Name = "EditEmployee";
-            this.Text = "แก้ไขข้อมูลพนักงาน";
+            this.Text = "หน้าต่างแก้ไขข้อมูลพนักงาน";
             this.Load += new System.EventHandler(this.EditEmployee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
