@@ -29,6 +29,7 @@ namespace MiniProjectDatabase
         private void button1_Click(object sender, EventArgs e)
         {
             AddMenu fs = new AddMenu();
+            this.Hide();
             fs.Visible = true;
         }
 
@@ -38,7 +39,7 @@ namespace MiniProjectDatabase
             AddEMPForm.Show();
             this.Hide();
         }
-        public void refresh()
+       /* public void refresh()
         {
             OracleDataAdapter da1;
             DataSet ds1, ds2;
@@ -52,8 +53,8 @@ namespace MiniProjectDatabase
 
             DataGridViewColumn c1, c2, c3;
 
-        }
-        private void GenerateControl()
+        } */
+        public void GenerateControl()
         {
             flowLayoutPanel1.Controls.Clear();
             db.openconnect();

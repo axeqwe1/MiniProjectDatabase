@@ -287,6 +287,8 @@ namespace MiniProjectDatabase.form
         private void cancel_btn_Click(object sender, EventArgs e)
         {
             this.Close();
+            Main fs = new Main();
+            fs.Visible = true;
         }
 
         private void menuPrice_Text_KeyPress(object sender, KeyPressEventArgs e)

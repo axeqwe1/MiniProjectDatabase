@@ -187,6 +187,8 @@ namespace MiniProjectDatabase
                     txtMenu_ID.Focus();
                 }
                 AddMenu fs = new AddMenu();
+                Main f1 = new Main();
+                f1.GenerateControl();
                 db.OracleConnect.Close();
                 this.Close();
                 fs.Visible = true;
