@@ -19,6 +19,7 @@ namespace MiniProjectDatabase
     {
         byte[] byteImg;
         string filename;
+        string checkfilename;
         string id, size_id;
         database db = new database();
 
@@ -152,9 +153,9 @@ namespace MiniProjectDatabase
                     $"TYPE = '{txtMenu_Type.Text}', PICTURE = '{filename}' WHERE MENU_ID = '{id}' ";
 
                 string temp_sql2 = $"UPDATE ENVY_MENU_SIZE SET PRICE = '{txtMenu_Price.Text}' WHERE MENU_ID = '{id}' AND SIZE_ID = '{size_id}' ";
-                
+
                 saveimage(filename);
-                
+
                 orclcmd =  new OracleCommand();
                 try
                 {
@@ -250,10 +251,12 @@ namespace MiniProjectDatabase
                 txtMenu_Type.Text = reader["TYPE"].ToString();
                 comboMenu_SIze.SelectedValue = reader["size_id"].ToString();
                 pictureBox1.BackgroundImage = null;
+                filename = reader["picture"].ToString();
                 Image IMG = resizeImage(Image.FromFile(imagePath + reader["picture"].ToString()), new Size(269, 233));
                 pictureBox1.Image = IMG;
             }
             reader.Close();
+            
         }
         private void EditMenu_Load(object sender, EventArgs e)
         {
