@@ -53,6 +53,9 @@ namespace MiniProjectDatabase
 
         private void CANCEL_EDIT_EMP_Click(object sender, EventArgs e)
         {
+            this.Close();
+            AddEmploy AddEmp = new AddEmploy();
+            AddEmp.Show();
             
         }
 
@@ -80,6 +83,9 @@ namespace MiniProjectDatabase
                     MessageBox.Show("แก้ไขข้อมูลสำเร็จ");
                     this.DialogResult = DialogResult.OK;
                     this.Close();
+                    AddEmploy AddEmp = new AddEmploy();
+                    AddEmp.Show();
+
                     
                 }
                 catch (Exception ex)

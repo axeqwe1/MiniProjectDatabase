@@ -31,7 +31,7 @@ namespace MiniProjectDatabase
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AddEmployee AddEMPForm = new AddEmployee();
+            AddEmploy AddEMPForm = new AddEmploy();
             AddEMPForm.Show();
             this.Hide();
         }
