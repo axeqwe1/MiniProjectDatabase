@@ -51,6 +51,7 @@ namespace MiniProjectDatabase.form
                         orcl.Connection = db.OracleConnect;
                         rowaffeted = orcl.ExecuteNonQuery();
                         db.OracleConnect.Close();
+                        MessageBox.Show("เพิ่มข้อมูลสำเร็จ");
                     }
                     catch (Exception ex)
                     {
@@ -101,6 +102,90 @@ namespace MiniProjectDatabase.form
             this.Close();
             AddMenu fs = new AddMenu();
             fs.refresh();
+        }
+
+        private void size_edit_btn_Click(object sender, EventArgs e)
+        {
+            if (sizeID_text.Text == "" || sizeName_text.Text == "")
+            {
+                MessageBox.Show("กรุณากรอกข้อมูลที่จะแก้ไขให้ครบถ้วน");
+                sizeID_text.Focus();
+            }
+            else if (MessageBox.Show("คุณต้องการที่จะแก้ไขข้อมูลใช่หรือไม่?", "แก้ไขข้อมูลพนักงาน", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                OracleCommand orclcmd = new OracleCommand();
+                string temp_sql = $"UPDATE ENVY_SIZE SET SIZENAME = '{sizeName_text.Text}' WHERE SIZE_ID = '{sizeID_text.Text}'";
+
+                try
+                {
+                    db.openconnect();
+                    orclcmd.CommandType = CommandType.Text;
+                    orclcmd.CommandText = temp_sql;
+                    orclcmd.Connection = db.OracleConnect;
+                    int rowaffected = orclcmd.ExecuteNonQuery();
+                    MessageBox.Show("แก้ไขข้อมูลขนาดสำเร็จ");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    sizeName_text.Focus();
+                }
+                refresh();
+
+            }
+        }
+
+        private void sizedatagrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = sizedatagrid.Rows[e.RowIndex];
+                sizeID_text.Text = row.Cells["SIZE_ID"].Value.ToString();
+                sizeName_text.Text = row.Cells["SIZENAME"].Value.ToString();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (sizedatagrid.SelectedRows.Count > 0)
+            {
+                if (MessageBox.Show("คุณต้องการที่จะลบข้อมูลหรือไม่?", "ลบข้อมูล", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int rowIndex = sizedatagrid.SelectedRows[0].Index;
+                    string id = sizedatagrid.Rows[rowIndex].Cells["SIZE_ID"].Value.ToString();
+                    string temp_sql = "DELETE FROM ENVY_SIZE WHERE SIZE_ID = '" + id + "'";
+                    try
+                    {
+                        db.openconnect();
+                        OracleCommand orclcmd = new OracleCommand();
+                        orclcmd.CommandType = CommandType.Text;
+                        orclcmd.CommandText = temp_sql;
+                        orclcmd.Connection = db.OracleConnect;
+                        int rowaffected = orclcmd.ExecuteNonQuery();
+                        MessageBox.Show("ลบข้อมูลสำเร็จ");
+                        refresh();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        sizeID_text.Focus();
+                    }
+                }
+            }
+        }
+
+        private void sizeID_text_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int num = Convert.ToInt32(e.KeyChar);
+            if ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57 || num == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }
