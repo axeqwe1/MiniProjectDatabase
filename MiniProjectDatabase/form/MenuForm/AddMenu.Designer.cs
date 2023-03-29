@@ -56,6 +56,7 @@ namespace MiniProjectDatabase.form
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.menu_datagrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -65,23 +66,23 @@ namespace MiniProjectDatabase.form
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 186);
+            this.label1.Location = new System.Drawing.Point(55, 186);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 25);
+            this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "MenuName";
+            this.label1.Text = "ชื่อเมนู";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(68, 225);
+            this.label2.Location = new System.Drawing.Point(56, 225);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 25);
+            this.label2.Size = new System.Drawing.Size(102, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Detail";
+            this.label2.Text = "รายละเอียดเมนู";
             // 
             // menuDetail_Text
             // 
@@ -99,7 +100,7 @@ namespace MiniProjectDatabase.form
             this.menuName_Text.Location = new System.Drawing.Point(165, 186);
             this.menuName_Text.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.menuName_Text.Name = "menuName_Text";
-            this.menuName_Text.Size = new System.Drawing.Size(232, 30);
+            this.menuName_Text.Size = new System.Drawing.Size(232, 26);
             this.menuName_Text.TabIndex = 3;
             // 
             // image
@@ -109,9 +110,9 @@ namespace MiniProjectDatabase.form
             this.image.Location = new System.Drawing.Point(448, 145);
             this.image.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.image.Name = "image";
-            this.image.Size = new System.Drawing.Size(65, 25);
+            this.image.Size = new System.Drawing.Size(51, 20);
             this.image.TabIndex = 4;
-            this.image.Text = "image";
+            this.image.Text = "รูปภาพ";
             // 
             // chosefile_btn
             // 
@@ -120,7 +121,7 @@ namespace MiniProjectDatabase.form
             this.chosefile_btn.Name = "chosefile_btn";
             this.chosefile_btn.Size = new System.Drawing.Size(150, 36);
             this.chosefile_btn.TabIndex = 5;
-            this.chosefile_btn.Text = "Chose Image";
+            this.chosefile_btn.Text = "เลือกรูปภาพ";
             this.chosefile_btn.UseVisualStyleBackColor = true;
             this.chosefile_btn.Click += new System.EventHandler(this.chosefile_btn_Click);
             // 
@@ -128,12 +129,12 @@ namespace MiniProjectDatabase.form
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(75, 380);
+            this.label3.Location = new System.Drawing.Point(63, 380);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 25);
+            this.label3.Size = new System.Drawing.Size(82, 20);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Type";
+            this.label3.Text = "ประเภทเมนู";
             // 
             // menuType_Text
             // 
@@ -141,7 +142,7 @@ namespace MiniProjectDatabase.form
             this.menuType_Text.Location = new System.Drawing.Point(165, 380);
             this.menuType_Text.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.menuType_Text.Name = "menuType_Text";
-            this.menuType_Text.Size = new System.Drawing.Size(232, 30);
+            this.menuType_Text.Size = new System.Drawing.Size(232, 26);
             this.menuType_Text.TabIndex = 7;
             // 
             // addmenu_btn
@@ -151,7 +152,7 @@ namespace MiniProjectDatabase.form
             this.addmenu_btn.Name = "addmenu_btn";
             this.addmenu_btn.Size = new System.Drawing.Size(171, 47);
             this.addmenu_btn.TabIndex = 8;
-            this.addmenu_btn.Text = "ADD";
+            this.addmenu_btn.Text = "เพิ่มเมนู";
             this.addmenu_btn.UseVisualStyleBackColor = true;
             this.addmenu_btn.Click += new System.EventHandler(this.addmenu_btn_Click);
             // 
@@ -163,18 +164,18 @@ namespace MiniProjectDatabase.form
             this.menu_datagrid.Name = "menu_datagrid";
             this.menu_datagrid.RowHeadersWidth = 51;
             this.menu_datagrid.RowTemplate.Height = 24;
-            this.menu_datagrid.Size = new System.Drawing.Size(843, 239);
+            this.menu_datagrid.Size = new System.Drawing.Size(843, 293);
             this.menu_datagrid.TabIndex = 9;
             this.menu_datagrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.menu_datagrid_CellClick);
             // 
             // cancel_btn
             // 
-            this.cancel_btn.Location = new System.Drawing.Point(772, 37);
+            this.cancel_btn.Location = new System.Drawing.Point(772, 14);
             this.cancel_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(165, 40);
             this.cancel_btn.TabIndex = 10;
-            this.cancel_btn.Text = "CANCEL";
+            this.cancel_btn.Text = "ย้อนกลับ";
             this.cancel_btn.UseVisualStyleBackColor = true;
             this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
             // 
@@ -182,12 +183,12 @@ namespace MiniProjectDatabase.form
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(74, 312);
+            this.label4.Location = new System.Drawing.Point(70, 309);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 25);
+            this.label4.Size = new System.Drawing.Size(39, 20);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Price";
+            this.label4.Text = "ราคา";
             // 
             // menuPrice_Text
             // 
@@ -195,7 +196,7 @@ namespace MiniProjectDatabase.form
             this.menuPrice_Text.Location = new System.Drawing.Point(165, 306);
             this.menuPrice_Text.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.menuPrice_Text.Name = "menuPrice_Text";
-            this.menuPrice_Text.Size = new System.Drawing.Size(96, 30);
+            this.menuPrice_Text.Size = new System.Drawing.Size(96, 26);
             this.menuPrice_Text.TabIndex = 12;
             this.menuPrice_Text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.menuPrice_Text_KeyPress);
             // 
@@ -203,12 +204,13 @@ namespace MiniProjectDatabase.form
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(74, 345);
+            this.label5.Location = new System.Drawing.Point(70, 345);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 25);
+            this.label5.Size = new System.Drawing.Size(43, 20);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Size";
+            this.label5.Text = "ขนาด";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // menuSize_Box
             // 
@@ -217,7 +219,7 @@ namespace MiniProjectDatabase.form
             this.menuSize_Box.Location = new System.Drawing.Point(165, 342);
             this.menuSize_Box.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.menuSize_Box.Name = "menuSize_Box";
-            this.menuSize_Box.Size = new System.Drawing.Size(180, 33);
+            this.menuSize_Box.Size = new System.Drawing.Size(180, 28);
             this.menuSize_Box.TabIndex = 14;
             // 
             // label6
@@ -227,9 +229,9 @@ namespace MiniProjectDatabase.form
             this.label6.Location = new System.Drawing.Point(396, 37);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(190, 46);
+            this.label6.Size = new System.Drawing.Size(116, 37);
             this.label6.TabIndex = 15;
-            this.label6.Text = "AddMenu";
+            this.label6.Text = "เพิ่มเมนู";
             // 
             // button1
             // 
@@ -240,18 +242,18 @@ namespace MiniProjectDatabase.form
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 38);
             this.button1.TabIndex = 17;
-            this.button1.Text = "DELETE";
+            this.button1.Text = "ลบเมนู";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // add_size_btn
             // 
-            this.add_size_btn.Location = new System.Drawing.Point(353, 341);
+            this.add_size_btn.Location = new System.Drawing.Point(353, 339);
             this.add_size_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.add_size_btn.Name = "add_size_btn";
-            this.add_size_btn.Size = new System.Drawing.Size(120, 33);
+            this.add_size_btn.Size = new System.Drawing.Size(146, 33);
             this.add_size_btn.TabIndex = 18;
-            this.add_size_btn.Text = "ADD SIZE";
+            this.add_size_btn.Text = "เพิ่มขนาดภาชนะ";
             this.add_size_btn.UseVisualStyleBackColor = true;
             this.add_size_btn.Click += new System.EventHandler(this.add_size_btn_Click);
             // 
@@ -271,7 +273,7 @@ namespace MiniProjectDatabase.form
             this.editmenu_btn.Name = "editmenu_btn";
             this.editmenu_btn.Size = new System.Drawing.Size(171, 47);
             this.editmenu_btn.TabIndex = 20;
-            this.editmenu_btn.Text = "EDIT";
+            this.editmenu_btn.Text = "แก้ไขเมนู";
             this.editmenu_btn.UseVisualStyleBackColor = true;
             this.editmenu_btn.Click += new System.EventHandler(this.editmenu_btn_Click);
             // 
@@ -281,7 +283,7 @@ namespace MiniProjectDatabase.form
             this.menuID_Text.Location = new System.Drawing.Point(165, 146);
             this.menuID_Text.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.menuID_Text.Name = "menuID_Text";
-            this.menuID_Text.Size = new System.Drawing.Size(103, 30);
+            this.menuID_Text.Size = new System.Drawing.Size(103, 26);
             this.menuID_Text.TabIndex = 22;
             // 
             // label7
@@ -291,9 +293,9 @@ namespace MiniProjectDatabase.form
             this.label7.Location = new System.Drawing.Point(48, 149);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 25);
+            this.label7.Size = new System.Drawing.Size(58, 20);
             this.label7.TabIndex = 21;
-            this.label7.Text = "MenuID";
+            this.label7.Text = "รหัสเมนู";
             // 
             // groupBox1
             // 
@@ -311,7 +313,7 @@ namespace MiniProjectDatabase.form
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(14, 64);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(203, 29);
+            this.radioButton2.Size = new System.Drawing.Size(171, 24);
             this.radioButton2.TabIndex = 24;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "เพิ่มข้อมูลขนาดให้สินค้า";
@@ -324,7 +326,7 @@ namespace MiniProjectDatabase.form
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(14, 29);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(131, 29);
+            this.radioButton1.Size = new System.Drawing.Size(111, 24);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "เพิ่มเมนูสินค้า";
@@ -337,7 +339,7 @@ namespace MiniProjectDatabase.form
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(543, 455);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 33);
+            this.comboBox1.Size = new System.Drawing.Size(150, 28);
             this.comboBox1.TabIndex = 24;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -346,15 +348,25 @@ namespace MiniProjectDatabase.form
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(538, 427);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 25);
+            this.label8.Size = new System.Drawing.Size(46, 20);
             this.label8.TabIndex = 25;
             this.label8.Text = "ตาราง";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(55, 478);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 20);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "รายการเมนู";
+            // 
             // AddMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 810);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.groupBox1);
@@ -383,7 +395,7 @@ namespace MiniProjectDatabase.form
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddMenu";
-            this.Text = "AddMenu";
+            this.Text = "หน้าต่างเพิ่มเมนู";
             this.Load += new System.EventHandler(this.AddMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.menu_datagrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -423,5 +435,6 @@ namespace MiniProjectDatabase.form
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

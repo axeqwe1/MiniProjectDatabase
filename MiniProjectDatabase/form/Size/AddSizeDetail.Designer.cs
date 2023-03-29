@@ -97,25 +97,26 @@ namespace MiniProjectDatabase.form
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.button2.Location = new System.Drawing.Point(437, 7);
             this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(74, 35);
             this.button2.TabIndex = 5;
-            this.button2.Text = "CANCEL";
+            this.button2.Text = "ย้อนกลับ";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(82, 13);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(48, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 29);
+            this.label3.Size = new System.Drawing.Size(193, 24);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Add Size";
+            this.label3.Text = "เพิ่มขนาดภาชนะให้สินค้า";
             // 
             // sizedatagrid
             // 
@@ -132,13 +133,13 @@ namespace MiniProjectDatabase.form
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(343, 27);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(300, 35);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 29);
+            this.label4.Size = new System.Drawing.Size(114, 24);
             this.label4.TabIndex = 8;
-            this.label4.Text = "List";
+            this.label4.Text = "รายการภาชนะ";
             // 
             // size_edit_btn
             // 
@@ -181,7 +182,7 @@ namespace MiniProjectDatabase.form
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddSizeDetail";
-            this.Text = "AddSizeDetail";
+            this.Text = "หน้าต่างเพิ่มขนาดเมนู";
             this.Load += new System.EventHandler(this.AddSizeDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sizedatagrid)).EndInit();
             this.ResumeLayout(false);

@@ -52,22 +52,24 @@ namespace MiniProjectDatabase
             // 
             // CANCEL_EMP
             // 
+            this.CANCEL_EMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.CANCEL_EMP.Location = new System.Drawing.Point(571, 12);
             this.CANCEL_EMP.Name = "CANCEL_EMP";
             this.CANCEL_EMP.Size = new System.Drawing.Size(75, 36);
             this.CANCEL_EMP.TabIndex = 35;
-            this.CANCEL_EMP.Text = "Cancel";
+            this.CANCEL_EMP.Text = "ย้อนกลับ";
             this.CANCEL_EMP.UseVisualStyleBackColor = true;
             this.CANCEL_EMP.Click += new System.EventHandler(this.CANCEL_EMP_Click);
             // 
             // DELETE_EMP
             // 
             this.DELETE_EMP.BackColor = System.Drawing.Color.Red;
+            this.DELETE_EMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.DELETE_EMP.ForeColor = System.Drawing.Color.Yellow;
-            this.DELETE_EMP.Location = new System.Drawing.Point(547, 574);
+            this.DELETE_EMP.Location = new System.Drawing.Point(526, 574);
             this.DELETE_EMP.Margin = new System.Windows.Forms.Padding(2);
             this.DELETE_EMP.Name = "DELETE_EMP";
-            this.DELETE_EMP.Size = new System.Drawing.Size(90, 36);
+            this.DELETE_EMP.Size = new System.Drawing.Size(111, 36);
             this.DELETE_EMP.TabIndex = 34;
             this.DELETE_EMP.Text = "ลบข้อมูล";
             this.DELETE_EMP.UseVisualStyleBackColor = false;
@@ -75,10 +77,11 @@ namespace MiniProjectDatabase
             // 
             // EDIT_EMP
             // 
-            this.EDIT_EMP.Location = new System.Drawing.Point(457, 574);
+            this.EDIT_EMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.EDIT_EMP.Location = new System.Drawing.Point(415, 574);
             this.EDIT_EMP.Margin = new System.Windows.Forms.Padding(2);
             this.EDIT_EMP.Name = "EDIT_EMP";
-            this.EDIT_EMP.Size = new System.Drawing.Size(86, 36);
+            this.EDIT_EMP.Size = new System.Drawing.Size(107, 36);
             this.EDIT_EMP.TabIndex = 33;
             this.EDIT_EMP.Text = "แก้ไขข้อมูล";
             this.EDIT_EMP.UseVisualStyleBackColor = true;
@@ -111,12 +114,13 @@ namespace MiniProjectDatabase
             this.label6.Location = new System.Drawing.Point(12, 57);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 20);
+            this.label6.Size = new System.Drawing.Size(84, 20);
             this.label6.TabIndex = 30;
-            this.label6.Text = "EmployeeID";
+            this.label6.Text = "รหัสพนักงาน";
             // 
             // CLEAR_EMP
             // 
+            this.CLEAR_EMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.CLEAR_EMP.Location = new System.Drawing.Point(241, 273);
             this.CLEAR_EMP.Margin = new System.Windows.Forms.Padding(2);
             this.CLEAR_EMP.Name = "CLEAR_EMP";
@@ -128,6 +132,7 @@ namespace MiniProjectDatabase
             // 
             // ADD_EMP
             // 
+            this.ADD_EMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.ADD_EMP.Location = new System.Drawing.Point(121, 273);
             this.ADD_EMP.Margin = new System.Windows.Forms.Padding(2);
             this.ADD_EMP.Name = "ADD_EMP";
@@ -141,12 +146,12 @@ namespace MiniProjectDatabase
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(141, 12);
+            this.label5.Location = new System.Drawing.Point(199, 12);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 32);
+            this.label5.Size = new System.Drawing.Size(190, 32);
             this.label5.TabIndex = 27;
-            this.label5.Text = "Employee";
+            this.label5.Text = "เพิ่มพนักงานขาย";
             // 
             // txtADDRESS_EMP
             // 
@@ -162,12 +167,12 @@ namespace MiniProjectDatabase
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(37, 174);
+            this.label4.Location = new System.Drawing.Point(48, 171);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 20);
+            this.label4.Size = new System.Drawing.Size(35, 20);
             this.label4.TabIndex = 25;
-            this.label4.Text = "Address";
+            this.label4.Text = "ที่อยู่";
             // 
             // txtTEL_EMP
             // 
@@ -182,12 +187,12 @@ namespace MiniProjectDatabase
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(70, 142);
+            this.label3.Location = new System.Drawing.Point(13, 142);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 20);
+            this.label3.Size = new System.Drawing.Size(92, 20);
             this.label3.TabIndex = 23;
-            this.label3.Text = "Tel";
+            this.label3.Text = "เบอร์โทรศัพท์";
             // 
             // txtLNAME_EMP
             // 
@@ -202,12 +207,12 @@ namespace MiniProjectDatabase
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 115);
+            this.label2.Location = new System.Drawing.Point(36, 113);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 20);
+            this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 21;
-            this.label2.Text = "LastName";
+            this.label2.Text = "นามสกุล";
             // 
             // txtFNAME_EMP
             // 
@@ -222,12 +227,12 @@ namespace MiniProjectDatabase
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 86);
+            this.label1.Location = new System.Drawing.Point(48, 83);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.Size = new System.Drawing.Size(48, 20);
             this.label1.TabIndex = 19;
-            this.label1.Text = "FirstName";
+            this.label1.Text = "ชื่อจริง";
             // 
             // dataGridView1
             // 
@@ -264,7 +269,7 @@ namespace MiniProjectDatabase
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "AddEmploy";
-            this.Text = "AddEmploy";
+            this.Text = "หน้าต่างพนักงานขาย";
             this.Load += new System.EventHandler(this.AddEmploy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
