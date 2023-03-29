@@ -46,8 +46,8 @@ namespace MiniProjectDatabase
             this.label2 = new System.Windows.Forms.Label();
             this.txtFNAME_EMP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.EMP_datagridview = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.EMP_datagridview)).BeginInit();
             this.SuspendLayout();
             // 
             // CANCEL_EMP
@@ -234,16 +234,16 @@ namespace MiniProjectDatabase
             this.label1.TabIndex = 19;
             this.label1.Text = "ชื่อจริง";
             // 
-            // dataGridView1
+            // EMP_datagridview
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 356);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(609, 200);
-            this.dataGridView1.TabIndex = 18;
+            this.EMP_datagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EMP_datagridview.Location = new System.Drawing.Point(28, 356);
+            this.EMP_datagridview.Margin = new System.Windows.Forms.Padding(2);
+            this.EMP_datagridview.Name = "EMP_datagridview";
+            this.EMP_datagridview.RowHeadersWidth = 51;
+            this.EMP_datagridview.RowTemplate.Height = 24;
+            this.EMP_datagridview.Size = new System.Drawing.Size(609, 200);
+            this.EMP_datagridview.TabIndex = 18;
             // 
             // AddEmploy
             // 
@@ -267,11 +267,11 @@ namespace MiniProjectDatabase
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtFNAME_EMP);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.EMP_datagridview);
             this.Name = "AddEmploy";
             this.Text = "หน้าต่างพนักงานขาย";
             this.Load += new System.EventHandler(this.AddEmploy_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EMP_datagridview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,6 +296,6 @@ namespace MiniProjectDatabase
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFNAME_EMP;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView EMP_datagridview;
     }
 }

@@ -15,11 +15,16 @@ namespace MiniProjectDatabase
     public partial class AddEmploy : Form
     {
         database db = new database();
+        public DataGridView EMP_dataGrid
+        {
+            get { return EMP_datagridview; }
+            set { EMP_datagridview = value; }
+        }
         public AddEmploy()
         {
             InitializeComponent();
         }
-        private void refresh_grid()
+        public void refresh_grid()
         {
             OracleDataAdapter da;
             DataSet ds1;
@@ -31,14 +36,14 @@ namespace MiniProjectDatabase
 
             da.Fill(ds1, "ENVY_EMPLOYEE");
 
-            dataGridView1.DataSource = ds1;
-            dataGridView1.DataMember = "ENVY_EMPLOYEE";
+            EMP_datagridview.DataSource = ds1;
+            EMP_datagridview.DataMember = "ENVY_EMPLOYEE";
 
-            dataGridView1.Columns[0].HeaderText = "รหัสพนักงาน";
-            dataGridView1.Columns[1].HeaderText = "ชื่อ";
-            dataGridView1.Columns[2].HeaderText = "นามสกุล";
-            dataGridView1.Columns[3].HeaderText = "เบอร์โทร";
-            dataGridView1.Columns[4].HeaderText = "ที่อยู่";
+            EMP_datagridview.Columns[0].HeaderText = "รหัสพนักงาน";
+            EMP_datagridview.Columns[1].HeaderText = "ชื่อ";
+            EMP_datagridview.Columns[2].HeaderText = "นามสกุล";
+            EMP_datagridview.Columns[3].HeaderText = "เบอร์โทร";
+            EMP_datagridview.Columns[4].HeaderText = "ที่อยู่";
         }
 
         private void ADD_EMP_Click(object sender, EventArgs e)
@@ -123,17 +128,17 @@ namespace MiniProjectDatabase
         private void AddEmploy_Load(object sender, EventArgs e)
         {
             refresh_grid();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            EMP_datagridview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void DELETE_EMP_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (EMP_datagridview.SelectedRows.Count > 0)
             {
                 if (MessageBox.Show("คุณต้องการที่จะลบข้อมูลหรือไม่?", "ลบข้อมูล", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    int rowIndex = dataGridView1.SelectedRows[0].Index;
-                    string id = dataGridView1.Rows[rowIndex].Cells["EMP_ID"].Value.ToString();
+                    int rowIndex = EMP_datagridview.SelectedRows[0].Index;
+                    string id = EMP_datagridview.Rows[rowIndex].Cells["EMP_ID"].Value.ToString();
                     string temp_sql = "DELETE FROM ENVY_EMPLOYEE WHERE EMP_ID = '" + id + "'";
                     try
                     {
@@ -156,12 +161,12 @@ namespace MiniProjectDatabase
 
         private void EDIT_EMP_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedCells.Count > 0)
+            if (EMP_datagridview.SelectedCells.Count > 0)
             {
-                int rowIndex = dataGridView1.SelectedCells[0].RowIndex;
-                if (dataGridView1.SelectedRows.Count > 0 && dataGridView1.SelectedCells.Count == dataGridView1.Columns.Count)
+                int rowIndex = EMP_datagridview.SelectedCells[0].RowIndex;
+                if (EMP_datagridview.SelectedRows.Count > 0 && EMP_datagridview.SelectedCells.Count == EMP_datagridview.Columns.Count)
                 {
-                    string id = dataGridView1.Rows[rowIndex].Cells["EMP_ID"].Value.ToString();
+                    string id = EMP_datagridview.Rows[rowIndex].Cells["EMP_ID"].Value.ToString();
                     EditEmployee editEMP = new EditEmployee(id);
                     editEMP.Show();
                     this.Hide();
