@@ -100,7 +100,6 @@ namespace MiniProjectDatabase
         private void chosefile_btn_Click_1(object sender, EventArgs e)
         {
             Bitmap img;
-            int size = -1;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
             DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
@@ -197,7 +196,9 @@ namespace MiniProjectDatabase
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            AddMenu Menu = new AddMenu();
+            Menu.Show();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

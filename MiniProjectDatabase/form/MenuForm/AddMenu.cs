@@ -202,7 +202,6 @@ namespace MiniProjectDatabase.form
         private void chosefile_btn_Click(object sender, EventArgs e)
         {
             Bitmap img;
-            int size = -1;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
             DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
