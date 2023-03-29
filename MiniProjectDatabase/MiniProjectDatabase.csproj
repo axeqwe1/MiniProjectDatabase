@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="form\EmployeeForm\AddEmploy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EmployeeForm\AddEmploy.Designer.cs">
+      <DependentUpon>AddEmploy.cs</DependentUpon>
+    </Compile>
     <Compile Include="asset\database\database.cs" />
     <Compile Include="asset\lib\MenuList.cs" />
     <Compile Include="form\EmployeeForm\EditEmployee.cs">
@@ -101,12 +107,6 @@
     <Compile Include="form\Size\AddSizeDetail.Designer.cs">
       <DependentUpon>AddSizeDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\EmployeeForm\AddEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form\EmployeeForm\AddEmployee.Designer.cs">
-      <DependentUpon>AddEmployee.cs</DependentUpon>
-    </Compile>
     <Compile Include="form\SaleForm\SaleHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +121,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form\EmployeeForm\AddEmploy.resx">
+      <DependentUpon>AddEmploy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\EmployeeForm\EditEmployee.resx">
       <DependentUpon>EditEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,9 +144,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\Size\AddSizeDetail.resx">
       <DependentUpon>AddSizeDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form\EmployeeForm\AddEmployee.resx">
-      <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\SaleForm\SaleHistory.resx">
       <DependentUpon>SaleHistory.cs</DependentUpon>

@@ -10,16 +10,15 @@ using System.Windows.Forms;
 using MiniProjectDatabase.asset.database;
 using System.Data.OracleClient;
 
-namespace MiniProjectDatabase.form
+namespace MiniProjectDatabase
 {
-    public partial class AddEmployee : Form
+    public partial class AddEmploy : Form
     {
         database db = new database();
-        public AddEmployee()
+        public AddEmploy()
         {
             InitializeComponent();
         }
-
         private void refresh_grid()
         {
             OracleDataAdapter da;
@@ -59,7 +58,7 @@ namespace MiniProjectDatabase.form
 
             rowaffected = da.Fill(ds, "EMPLOYEE");
 
-            if(txtID_EMP.Text == "" || txtFNAME_EMP.Text == "" || txtLNAME_EMP.Text == "" || txtTEL_EMP.Text == "" || txtADDRESS_EMP.Text == "")
+            if (txtID_EMP.Text == "" || txtFNAME_EMP.Text == "" || txtLNAME_EMP.Text == "" || txtTEL_EMP.Text == "" || txtADDRESS_EMP.Text == "")
             {
                 MessageBox.Show("กรุณากรอกข้อมูลพนักงานให้ครบถ้วน");
                 txtID_EMP.Focus();
@@ -102,7 +101,6 @@ namespace MiniProjectDatabase.form
                 MessageBox.Show("เพิ่มข้อมูลสำเร็จ");
                 refresh_grid();
             }
-
         }
 
         private void CLEAR_EMP_Click(object sender, EventArgs e)
@@ -122,7 +120,7 @@ namespace MiniProjectDatabase.form
             this.Close();
         }
 
-        private void AddEmployee_Load(object sender, EventArgs e)
+        private void AddEmploy_Load(object sender, EventArgs e)
         {
             refresh_grid();
         }
@@ -174,13 +172,6 @@ namespace MiniProjectDatabase.form
                 }
             }
 
-
         }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
     }
 }
