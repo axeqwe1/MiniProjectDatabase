@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Data.OracleClient;
 using MiniProjectDatabase.form;
+using MiniProjectDatabase.form.SaleForm;
 using MiniProjectDatabase.form.etc;
 using MiniProjectDatabase.asset.lib;
 using MiniProjectDatabase.asset.database;
@@ -220,6 +221,27 @@ namespace MiniProjectDatabase
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if((dataGridView1.Rows.Count - 1) <= 0)
+            {
+                MessageBox.Show("ไม่มีรายการ");
+            }
+            else
+            {
+                List<SaleList> list = new List<SaleList>();
+
+                foreach(DataGridViewRow s in dataGridView1.Rows)
+                {
+                    //list.Add(new SaleList { NAME = s.Cells[0].Value.ToString(),})
+                    if(s.Cells[0].Value != null)
+                    {
+                        list.Add(new SaleList { NAME = s.Cells[0].Value.ToString(),DETAIL = s.Cells[1].Value.ToString(),SIZE = s.Cells[2].Value.ToString(),PRICE = double.Parse(s.Cells[3].Value.ToString()),QTY = int.Parse(s.Cells[4].Value.ToString()) });
+                    }
+                    
+                }
+                SaleForm fs = new SaleForm(list);
+                fs.Visible = true;
+            }
+            
 
         }
     }

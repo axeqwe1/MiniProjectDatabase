@@ -154,8 +154,6 @@ namespace MiniProjectDatabase.form
                 System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
                 img.Save(imagePath, System.Drawing.Imaging.ImageFormat.Jpeg);
             }
-            
-
         }
         public byte[] ImageToByteArray(System.Drawing.Image imageIn)
         {
@@ -171,7 +169,6 @@ namespace MiniProjectDatabase.form
             Image returnImage = Image.FromStream(ms);
             return returnImage;
         }
-
         private System.Drawing.Image resizeImage(System.Drawing.Image imgToResize, Size size)
         {
             //Get the image current width  

@@ -169,7 +169,7 @@ namespace MiniProjectDatabase.form
             // 
             // cancel_btn
             // 
-            this.cancel_btn.Location = new System.Drawing.Point(695, 752);
+            this.cancel_btn.Location = new System.Drawing.Point(772, 37);
             this.cancel_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(165, 40);

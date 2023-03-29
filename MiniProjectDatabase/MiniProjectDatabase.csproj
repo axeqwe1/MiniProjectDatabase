@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="asset\lib\SaleList.cs" />
     <Compile Include="form\EmployeeForm\AddEmploy.cs">
       <SubType>Form</SubType>
     </Compile>
