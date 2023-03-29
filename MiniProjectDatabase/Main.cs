@@ -152,11 +152,26 @@ namespace MiniProjectDatabase
             dataGridView1.ColumnCount = 5;
             dataGridView1.Columns[4].Width = 50;
             dataGridView1.Columns[0].Name = "ชื่อสินค้า";
-            dataGridView1.Columns[1].Name = "รายระเอียด";
+            dataGridView1.Columns[1].Name = "รายละเอียด";
             dataGridView1.Columns[2].Name = "ขนาด";
             dataGridView1.Columns[3].Name = "ราคา";
             dataGridView1.Columns[4].Name = "จำนวน";
+
+            AddEmploy comboEMP = new AddEmploy();
+            DataGridView dataGridView = comboEMP.EMP_dataGrid;
+
+            if (dataGridView != null)
+            {
+                List<string> empFNAME = new List<string>();
+                foreach (DataGridViewRow row in dataGridView.Rows)
+                {
+                    string firstnameEMP = row.Cells[1].Value.ToString();
+                    empFNAME.Add(firstnameEMP);
+                }
+                cmb_main.DataSource = empFNAME;
+            }
             GenerateControl();
+
         }
 
         private System.Drawing.Image resizeImage(System.Drawing.Image imgToResize, Size size)
