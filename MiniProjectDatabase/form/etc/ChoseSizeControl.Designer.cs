@@ -34,24 +34,25 @@ namespace MiniProjectDatabase.form.etc
             // 
             // sizeLab
             // 
-            this.sizeLab.AutoSize = true;
-            this.sizeLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sizeLab.Location = new System.Drawing.Point(66, 37);
+            this.sizeLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.sizeLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sizeLab.Location = new System.Drawing.Point(25, 0);
             this.sizeLab.Name = "sizeLab";
-            this.sizeLab.Size = new System.Drawing.Size(67, 31);
+            this.sizeLab.Size = new System.Drawing.Size(155, 28);
             this.sizeLab.TabIndex = 0;
             this.sizeLab.Text = "Size";
+            this.sizeLab.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ChoseSizeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.sizeLab);
             this.Name = "ChoseSizeControl";
-            this.Size = new System.Drawing.Size(210, 106);
+            this.Size = new System.Drawing.Size(206, 102);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

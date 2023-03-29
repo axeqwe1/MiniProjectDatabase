@@ -53,10 +53,13 @@ namespace MiniProjectDatabase.form
                         {
                             command1 = "INSERT INTO ENVY_MENU (menu_id,menuname,detail,type,picture)";
                             command1 += $"VALUES('{menuID_Text.Text}','{menuName_Text.Text}','{menuDetail_Text.Text}','{menuType_Text.Text}','{filename}')";
-                        
+                            command2 = "INSERT INTO ENVY_MENU_SIZE (menu_id,size_id,price)";
+                            command2 += $"VALUES('{menuID_Text.Text}','{menuSize_Box.SelectedValue}','{menuPrice_Text.Text}')";
+
                             saveimage(filename);
 
                             orcl1 = new OracleCommand();
+                            
 
                             try
                             {
@@ -64,13 +67,25 @@ namespace MiniProjectDatabase.form
                                 orcl1.CommandText = command1;
                                 orcl1.Connection = db.OracleConnect;
                                 rowaffeted = orcl1.ExecuteNonQuery();
-                                MessageBox.Show("เพิ่มเมนูสำเร็จ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                
                             }
                             catch (Exception ex)
                             {
                                 MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                        
+                            try
+                            {
+                                orcl1.CommandType = CommandType.Text;
+                                orcl1.CommandText = command2;
+                                orcl1.Connection = db.OracleConnect;
+                                rowaffeted = orcl1.ExecuteNonQuery();
+                                MessageBox.Show("เพิ่มเมนูสำเร็จ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+
                         }
                         else
                         {
@@ -82,31 +97,38 @@ namespace MiniProjectDatabase.form
             else if(radioButton2.Checked == true)
             {
                 rowaffeted = da2.Fill(ds2, "menu2");
-                if (rowaffeted == 0)
+                if (menuID_Text.Text == "" || menuPrice_Text.Text == "" || menuSize_Box.SelectedIndex < 0)
                 {
-                    command2 = "INSERT INTO ENVY_MENU_SIZE (menu_id,size_id,price)";
-                    command2 += $"VALUES('{menuID_Text.Text}','{menuSize_Box.SelectedValue}','{menuPrice_Text.Text}')";
-
-                    orcl1 = new OracleCommand();
-                    try
-                    {
-                        orcl1.CommandType = CommandType.Text;
-                        orcl1.CommandText = command2;
-                        orcl1.Connection = db.OracleConnect;
-                        rowaffeted = orcl1.ExecuteNonQuery();
-                        MessageBox.Show("เพิ่มขนาดเมนูสำเร็จ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                    MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("ไม่สามารถเพิ่มข้อมูลได้เนื่องจากมี Size นี้อยู่แล้ว", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (rowaffeted == 0)
+                    {
+                        command2 = "INSERT INTO ENVY_MENU_SIZE (menu_id,size_id,price)";
+                        command2 += $"VALUES('{menuID_Text.Text}','{menuSize_Box.SelectedValue}','{menuPrice_Text.Text}')";
+
+                        orcl1 = new OracleCommand();
+                        try
+                        {
+                            orcl1.CommandType = CommandType.Text;
+                            orcl1.CommandText = command2;
+                            orcl1.Connection = db.OracleConnect;
+                            rowaffeted = orcl1.ExecuteNonQuery();
+                            MessageBox.Show("เพิ่มขนาดเมนูสำเร็จ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่สามารถเพิ่มข้อมูลได้เนื่องจากมี Size นี้อยู่แล้ว", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-            
+            refresh();
         }
 
         private void oracleConnection1_InfoMessage(object sender, System.Data.OracleClient.OracleInfoMessageEventArgs e)
@@ -291,18 +313,20 @@ namespace MiniProjectDatabase.form
             OracleDataAdapter da1;
             DataSet ds1 = new DataSet();
             int rowaffected;
-            string temp_sql1 = "SELECT envy_menu.menu_id,envy_menu.menuname,envy_menu.detail,envy_menu_size.price,envy_size.sizename,envy_menu.type ";
+            string getId = menuSize_Box.SelectedValue.ToString();
+            string temp_sql1 = "SELECT envy_size.size_id,envy_menu.menu_id,envy_menu.menuname,envy_menu.detail,envy_menu_size.price,envy_size.sizename,envy_menu.type ";
             temp_sql1 += "FROM envy_menu_size inner join envy_menu on envy_menu_size.menu_id = envy_menu.menu_id ";
             temp_sql1 += "inner join envy_size on envy_size.size_id = envy_menu_size.size_id ";
             temp_sql1 += $"WHERE envy_menu.menu_id = '{menuID_Text.Text}' ";
             temp_sql1 += "order by envy_menu.menu_id ASC";
+            
             da1 = new OracleDataAdapter(temp_sql1,db.OracleConnect);
-
             rowaffected = da1.Fill(ds1,"menusize");
 
             if (rowaffected > 0)
             {
-                EditMenu editEMP = new EditMenu(menuID_Text.Text);
+                EditMenu editEMP = new EditMenu(menuID_Text.Text, getId);
+                this.Hide();
                 editEMP.Show();
                 
             }
@@ -362,8 +386,14 @@ namespace MiniProjectDatabase.form
                 menuDetail_Text.Text = row.Cells["DETAIL"].Value.ToString();
                 menuPrice_Text.Text = row.Cells["PRICE"].Value.ToString();
                 menuType_Text.Text = row.Cells["TYPE"].Value.ToString();
-                menuSize_Box.SelectedItem = row.Cells["SIZENAME"].Value.ToString();
+                string sizeName = row.Cells["SIZENAME"].Value.ToString();
+                int SizeIndex = menuSize_Box.FindStringExact(sizeName);
+                if (SizeIndex >= 0)
+                {
+                    menuSize_Box.SelectedIndex = SizeIndex;
+                }
             }
+            
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using MiniProjectDatabase.asset.database;
+using MiniProjectDatabase.form;
 using System.Data.OracleClient;
 
 namespace MiniProjectDatabase
@@ -18,50 +19,39 @@ namespace MiniProjectDatabase
     {
         byte[] byteImg;
         string filename;
+        string id, size_id;
         database db = new database();
 
-        public EditMenu(string id)
+        public EditMenu(string id,string size_id)
         {
             InitializeComponent();
+            this.id = id;
+            this.size_id = size_id;
 
-            db.openconnect();
-
-            // Populate the form with the data of the selected employee
-            string query = "SELECT * FROM ENVY_MENU WHERE MENU_ID = '" + id + "'";
-            OracleCommand cmd = new OracleCommand(query, db.OracleConnect);
-            OracleDataReader reader = cmd.ExecuteReader();
-
-            if (reader.Read())
-            {
-                txtMenu_ID.Text = reader["MENU_ID"].ToString();
-                txtMenu_Name.Text = reader["MENUNAME"].ToString();
-                txtMenu_Detail.Text = reader["DETAIL"].ToString();
-                //txtMenu_Price.Text = reader["PRICE"].ToString();
-                txtMenu_Type.Text = reader["TYPE"].ToString();
-                //comboMenu_SIze.SelectedItem = reader["SIZENAME"].ToString();  
-            }
-            reader.Close();
         }
 
         public void saveimage(string filename)
         {
+            string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())) + "\\";
+            string folderPath = "asset\\img\\";
+            string imagePath = projectPath + folderPath + filename;
             //Create a Folder in your Root directory on your solution.
             if (pictureBox1.Image == null)
             {
                 MessageBox.Show("กรุณาใส่รูปภาพ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (File.Exists(imagePath)) 
+            {
+                
+            }
             else
             {
-                string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())) + "\\";
-                string folderPath = "asset\\img\\";
-                string imagePath = projectPath + folderPath + filename;
+                
                 MessageBox.Show($"รูปภาพเก็บไว้ที่ :: {imagePath}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MemoryStream ms = new MemoryStream(byteImg);
                 System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
                 img.Save(imagePath, System.Drawing.Imaging.ImageFormat.Jpeg);
             }
-
-
         }
         public byte[] ImageToByteArray(System.Drawing.Image imageIn)
         {
@@ -157,23 +147,23 @@ namespace MiniProjectDatabase
             else if (MessageBox.Show("คุณต้องการที่จะแก้ไขข้อมูลใช่หรือไม่?", "แก้ไขข้อมูลพนักงาน", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                OracleCommand orclcmd = new OracleCommand();
+                db.openconnect();
+                OracleCommand orclcmd;
                 string temp_sql1 =  $"UPDATE ENVY_MENU SET MENUNAME = '{txtMenu_Name.Text}', DETAIL = '{txtMenu_Detail.Text}'," +
-                    $"TYPE = '{txtMenu_Type.Text}', PICTURE = '{filename}' WHERE MENU_ID = '{txtMenu_ID.Text}'";
+                    $"TYPE = '{txtMenu_Type.Text}', PICTURE = '{filename}' WHERE MENU_ID = '{id}' ";
 
-                string temp_sql2 = $"UPDATE ENVY_MENU_SIZE SET PRICE = '{txtMenu_Price.Text}', WHERE MENU_ID,SIZE_ID = '{txtMenu_ID.Text}', '{comboMenu_SIze.SelectedValue}' ";
+                string temp_sql2 = $"UPDATE ENVY_MENU_SIZE SET PRICE = '{txtMenu_Price.Text}' WHERE MENU_ID = '{id}' AND SIZE_ID = '{size_id}' ";
+                
                 saveimage(filename);
+                
+                orclcmd =  new OracleCommand();
                 try
                 {
-                    db.openconnect();
+                    
                     orclcmd.CommandType = CommandType.Text;
                     orclcmd.CommandText = temp_sql1;
-                    orclcmd.CommandText = temp_sql2;
                     orclcmd.Connection = db.OracleConnect;
-                    int rowaffected = orclcmd.ExecuteNonQuery();
-                    MessageBox.Show("แก้ไขข้อมูลสำเร็จ");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    orclcmd.ExecuteNonQuery();
 
                 }
                 catch (Exception ex)
@@ -181,6 +171,25 @@ namespace MiniProjectDatabase
                     MessageBox.Show(ex.Message);
                     txtMenu_ID.Focus();
                 }
+                try
+                {
+                    
+                    orclcmd.CommandType = CommandType.Text;
+                    orclcmd.CommandText = temp_sql2;
+                    orclcmd.Connection = db.OracleConnect;
+                    orclcmd.ExecuteNonQuery();
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    txtMenu_ID.Focus();
+                }
+                AddMenu fs = new AddMenu();
+                db.OracleConnect.Close();
+                this.Close();
+                fs.Visible = true;
             }
         }
 
@@ -197,6 +206,59 @@ namespace MiniProjectDatabase
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+        public void refresh()
+        {
+            OracleDataAdapter  da2;
+            DataSet  ds2;
+            ds2 = new DataSet();
+
+            string temp_sql2 = $"SELECT * FROM ENVY_SIZE";
+            da2 = new OracleDataAdapter(temp_sql2, db.OracleConnect);
+            da2.Fill(ds2, "size");
+
+
+            comboMenu_SIze.DataSource = ds2.Tables["size"];
+            comboMenu_SIze.DisplayMember = "SIZENAME";
+            comboMenu_SIze.ValueMember = "SIZE_ID";
+
+        }
+        private void read()
+        {
+            string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())) + "\\";
+            string folderPath = "asset\\img\\";
+            string imagePath = projectPath + folderPath;
+            db.openconnect();
+            // Populate the form with the data of the selected employee
+            string temp_sql1 = "SELECT envy_menu.menu_id,envy_size.size_id ,envy_menu.menuname ,envy_menu.detail ,envy_menu_size.price ,envy_size.sizename ,envy_menu.type ,envy_menu.picture ";
+            temp_sql1 += "FROM envy_menu_size inner join envy_menu on envy_menu_size.menu_id = envy_menu.menu_id ";
+            temp_sql1 += "inner join envy_size on envy_size.size_id = envy_menu_size.size_id ";
+            temp_sql1 += $"WHERE envy_menu.menu_id = '{id}' AND envy_size.size_id = '{size_id}' ";
+            temp_sql1 += "order by envy_menu.menu_id ASC";
+            OracleCommand cmd = new OracleCommand(temp_sql1, db.OracleConnect);
+            OracleDataReader reader = cmd.ExecuteReader();
+            
+            if (reader.Read())
+            {
+                txtMenu_ID.Text = reader["MENU_ID"].ToString();
+                txtMenu_Name.Text = reader["MENUNAME"].ToString();
+                txtMenu_Detail.Text = reader["DETAIL"].ToString();
+                txtMenu_Price.Text = reader["PRICE"].ToString();
+                txtMenu_Type.Text = reader["TYPE"].ToString();
+                comboMenu_SIze.SelectedValue = reader["size_id"].ToString();
+                pictureBox1.BackgroundImage = null;
+                Image IMG = resizeImage(Image.FromFile(imagePath + reader["picture"].ToString()), new Size(269, 233));
+                pictureBox1.Image = IMG;
+            }
+            reader.Close();
+        }
+        private void EditMenu_Load(object sender, EventArgs e)
+        {
+            
+            refresh();
+            read();
+            txtMenu_ID.Enabled = false;
+            comboMenu_SIze.Enabled = false;
         }
     }
 }

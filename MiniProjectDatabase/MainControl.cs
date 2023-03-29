@@ -16,11 +16,18 @@ namespace MiniProjectDatabase
         {
             InitializeComponent();
         }
-        
+
+        private string _menu_id;
         private Image _image;
         private string _menuname;
         private string _description;
-        private string _price;
+        private double _price;
+        [Category("Menu")]
+        public string MenuID
+        {
+            get { return _menu_id; }
+            set { _menu_id = value; }
+        }
         [Category("Menu")]
         public Image _Image
         {
@@ -40,10 +47,10 @@ namespace MiniProjectDatabase
             set { _description = value; descLab.Text = value; }
         }
         [Category("Menu")]
-        public string _Price
+        public double _Price
         {
             get { return _price; }
-            set { _price = value; priceLab.Text = value; }
+            set { _price = value;}
         }
 
         private void picMenu_Click(object sender, EventArgs e)

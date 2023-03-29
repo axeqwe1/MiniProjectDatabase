@@ -31,7 +31,6 @@ namespace MiniProjectDatabase
         {
             this.menuLab = new System.Windows.Forms.Label();
             this.descLab = new System.Windows.Forms.Label();
-            this.priceLab = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -52,21 +51,11 @@ namespace MiniProjectDatabase
             // 
             this.descLab.AutoSize = true;
             this.descLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descLab.Location = new System.Drawing.Point(187, 52);
+            this.descLab.Location = new System.Drawing.Point(187, 48);
             this.descLab.Name = "descLab";
             this.descLab.Size = new System.Drawing.Size(77, 17);
             this.descLab.TabIndex = 3;
             this.descLab.Text = "description";
-            // 
-            // priceLab
-            // 
-            this.priceLab.AutoSize = true;
-            this.priceLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceLab.Location = new System.Drawing.Point(397, 111);
-            this.priceLab.Name = "priceLab";
-            this.priceLab.Size = new System.Drawing.Size(53, 24);
-            this.priceLab.TabIndex = 4;
-            this.priceLab.Text = "Price";
             // 
             // panel1
             // 
@@ -85,17 +74,17 @@ namespace MiniProjectDatabase
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // UserControl1
+            // MainControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FloralWhite;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.priceLab);
             this.Controls.Add(this.descLab);
             this.Controls.Add(this.menuLab);
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(455, 150);
+            this.Name = "MainControl";
+            this.Size = new System.Drawing.Size(327, 146);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -106,7 +95,6 @@ namespace MiniProjectDatabase
         #endregion
         private System.Windows.Forms.Label menuLab;
         private System.Windows.Forms.Label descLab;
-        private System.Windows.Forms.Label priceLab;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

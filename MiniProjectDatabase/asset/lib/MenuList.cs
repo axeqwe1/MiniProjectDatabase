@@ -9,18 +9,36 @@ namespace MiniProjectDatabase.asset.lib
     
     class MenuList
     {
+        string menuid;
+        string sizeid;
         string name;
-        string price;
+        string detail;
+        double price;
         string size;
         string type;
-
-        public string Name
+        string picture;
+        
+        public string MenuId
+        {
+            get { return menuid; }
+            set { menuid = value; }
+        }
+        public string SizeID
+        {
+            get { return sizeid; }
+            set { sizeid = value; }
+        }
+        public string NAME
         {
             get { return name; }
             set { name = value; }
         }
-
-        public string Price
+        public string Detail
+        {
+            get { return detail; }
+            set { detail = value; }
+        }
+        public double Price
         {
             get { return price; }
             set { price = value; }
@@ -34,6 +52,11 @@ namespace MiniProjectDatabase.asset.lib
         {
             get { return type; }
             set { type = value; }
+        }
+        public string Picture
+        {
+            get { return picture; }
+            set { picture = value; }
         }
     }
 }
