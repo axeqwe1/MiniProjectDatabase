@@ -281,6 +281,7 @@ namespace MiniProjectDatabase.form
             refresh();
             radioButton1.Checked = true;
             menuID_Text.Focus();
+            menu_datagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)

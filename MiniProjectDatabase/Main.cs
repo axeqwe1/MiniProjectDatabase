@@ -146,7 +146,7 @@ namespace MiniProjectDatabase
 
         private void Main_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnCount = 5;
             dataGridView1.Columns[4].Width = 50;
             dataGridView1.Columns[0].Name = "ชื่อสินค้า";

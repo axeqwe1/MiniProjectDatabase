@@ -123,6 +123,7 @@ namespace MiniProjectDatabase
         private void AddEmploy_Load(object sender, EventArgs e)
         {
             refresh_grid();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void DELETE_EMP_Click(object sender, EventArgs e)
