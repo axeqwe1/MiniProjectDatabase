@@ -10,8 +10,8 @@ namespace MiniProjectDatabase.asset.database
     class database
     {
         OracleConnection ORCL;
-        //private string ip = "192.168.142.128";
-        private string ip = "192.168.27.128";
+        private string ip = "192.168.142.128";
+        //private string ip = "192.168.27.128";
         //private string ip = "192.168.93.129";
         private string id = "ora1";
         private string password = "ora1";
@@ -33,9 +33,8 @@ namespace MiniProjectDatabase.asset.database
                 {
                     ORCL.Open();
                 }
-                
-                
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"{ex.Message}");
             }

@@ -80,6 +80,7 @@ namespace MiniProjectDatabase.form
                                 orcl1.Connection = db.OracleConnect;
                                 rowaffeted = orcl1.ExecuteNonQuery();
                                 MessageBox.Show("เพิ่มเมนูสำเร็จ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                pictureBox1.Image = MiniProjectDatabase.Properties.Resources._360_F_296055218_RXc721N9fSYIz3sEV7QALYquMVP31jdJ;
                             }
                             catch (Exception ex)
                             {
@@ -90,6 +91,7 @@ namespace MiniProjectDatabase.form
                         else
                         {
                             MessageBox.Show("ไม่สามารถเพิ่มข้อมูลได้ หมายเลข ID ซ้ำ", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            radioButton2.Checked = true;
                         }
                     }
                 }
@@ -119,7 +121,7 @@ namespace MiniProjectDatabase.form
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            MessageBox.Show("ไม่พบรหัสสินค้านี้","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -278,6 +280,9 @@ namespace MiniProjectDatabase.form
         }
         private void AddMenu_Load(object sender, EventArgs e)
         {
+            comboBox1.Items.Add("All");
+            comboBox1.Items.Add("OnlyMenu");
+            comboBox1.SelectedItem = "All";
             refresh();
             radioButton1.Checked = true;
             menuID_Text.Focus();
@@ -313,30 +318,39 @@ namespace MiniProjectDatabase.form
 
         private void editmenu_btn_Click(object sender, EventArgs e)
         {
+            comboBox1.SelectedItem = "All";
             OracleDataAdapter da1;
             DataSet ds1 = new DataSet();
             int rowaffected;
-            string getId = menuSize_Box.SelectedValue.ToString();
-            string temp_sql1 = "SELECT envy_size.size_id,envy_menu.menu_id,envy_menu.menuname,envy_menu.detail,envy_menu_size.price,envy_size.sizename,envy_menu.type ";
-            temp_sql1 += "FROM envy_menu_size inner join envy_menu on envy_menu_size.menu_id = envy_menu.menu_id ";
-            temp_sql1 += "inner join envy_size on envy_size.size_id = envy_menu_size.size_id ";
-            temp_sql1 += $"WHERE envy_menu.menu_id = '{menuID_Text.Text}' ";
-            temp_sql1 += "order by envy_menu.menu_id ASC";
-            
-            da1 = new OracleDataAdapter(temp_sql1,db.OracleConnect);
-            rowaffected = da1.Fill(ds1,"menusize");
-
-            if (rowaffected > 0)
+            if(menuID_Text.Text == "" || menuSize_Box.SelectedValue == null || menuName_Text.Text == "" || menuPrice_Text.Text == "")
             {
-                EditMenu editEMP = new EditMenu(menuID_Text.Text, getId);
-                this.Hide();
-                editEMP.Show();
-                
+                MessageBox.Show("กรูณากรอกข้อมูลสินค้าให้ครบ");
             }
             else
             {
-                MessageBox.Show("ไม่พบรหัสสินค้า");
+                string getId = menuSize_Box.SelectedValue.ToString();
+                string temp_sql1 = "SELECT envy_size.size_id,envy_menu.menu_id,envy_menu.menuname,envy_menu.detail,envy_menu_size.price,envy_size.sizename,envy_menu.type ";
+                temp_sql1 += "FROM envy_menu_size inner join envy_menu on envy_menu_size.menu_id = envy_menu.menu_id ";
+                temp_sql1 += "inner join envy_size on envy_size.size_id = envy_menu_size.size_id ";
+                temp_sql1 += $"WHERE envy_menu.menu_id = '{menuID_Text.Text}' ";
+                temp_sql1 += "order by envy_menu.menu_id ASC";
+
+                da1 = new OracleDataAdapter(temp_sql1, db.OracleConnect);
+                rowaffected = da1.Fill(ds1, "menusize");
+
+                if (rowaffected > 0)
+                {
+                    EditMenu editEMP = new EditMenu(menuID_Text.Text, getId);
+                    this.Hide();
+                    editEMP.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("ไม่พบรหัสสินค้า");
+                }
             }
+            
             
             /* if (menu_datagrid.SelectedCells.Count > 0)
              {
@@ -383,20 +397,187 @@ namespace MiniProjectDatabase.form
         {
             if(e.RowIndex >= 0)
             {
-                DataGridViewRow row = menu_datagrid.Rows[e.RowIndex];
-                menuID_Text.Text = row.Cells["MENU_ID"].Value.ToString();
-                menuName_Text.Text = row.Cells["MENUNAME"].Value.ToString();
-                menuDetail_Text.Text = row.Cells["DETAIL"].Value.ToString();
-                menuPrice_Text.Text = row.Cells["PRICE"].Value.ToString();
-                menuType_Text.Text = row.Cells["TYPE"].Value.ToString();
-                string sizeName = row.Cells["SIZENAME"].Value.ToString();
-                int SizeIndex = menuSize_Box.FindStringExact(sizeName);
-                if (SizeIndex >= 0)
+                if(comboBox1.SelectedItem == "All")
                 {
-                    menuSize_Box.SelectedIndex = SizeIndex;
+                    DataGridViewRow row = menu_datagrid.Rows[e.RowIndex];
+                    menuID_Text.Text = row.Cells["MENU_ID"].Value.ToString();
+                    menuName_Text.Text = row.Cells["MENUNAME"].Value.ToString();
+                    menuDetail_Text.Text = row.Cells["DETAIL"].Value.ToString();
+                    menuPrice_Text.Text = row.Cells["PRICE"].Value.ToString();
+                    menuType_Text.Text = row.Cells["TYPE"].Value.ToString();
+                    string sizeName = row.Cells["SIZENAME"].Value.ToString();
+                    int SizeIndex = menuSize_Box.FindStringExact(sizeName);
+                    if (SizeIndex >= 0)
+                    {
+                        menuSize_Box.SelectedIndex = SizeIndex;
+                    }
                 }
+                else if(comboBox1.SelectedItem == "OnlyMenu")
+                {
+                    DataGridViewRow row = menu_datagrid.Rows[e.RowIndex];
+                    menuID_Text.Text = row.Cells["MENU_ID"].Value.ToString();
+                    menuName_Text.Text = row.Cells["MENUNAME"].Value.ToString();
+                    menuDetail_Text.Text = row.Cells["DETAIL"].Value.ToString();
+                    menuType_Text.Text = row.Cells["TYPE"].Value.ToString();
+
+                  
+                }
+                
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedItem == "All")
+            {
+                if (MessageBox.Show("คุณต้องการที่จะลบข้อมูลหรือไม่?", "ลบข้อมูล", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string id = menuID_Text.Text;
+                    string size_id = menuSize_Box.SelectedValue.ToString();
+                    string temp_sql = $"DELETE FROM envy_menu_size WHERE menu_id = '{id}' AND size_id = '{size_id}'";
+                    try
+                    {
+                        db.openconnect();
+                        OracleCommand orclcmd = new OracleCommand();
+                        orclcmd.CommandType = CommandType.Text;
+                        orclcmd.CommandText = temp_sql;
+                        orclcmd.Connection = db.OracleConnect;
+                        int rowaffected = orclcmd.ExecuteNonQuery();
+                        refresh();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }else if (comboBox1.SelectedItem == "OnlyMenu")
+            {
+                if (MessageBox.Show("คุณต้องการที่จะลบเมนูนี้หรือไม่?", "ลบข้อมูล", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    OracleDataAdapter da;
+                    DataSet ds = new DataSet();
+                    int row;
+                    string id = menuID_Text.Text;
+                    string sql = $"SELECT * from Envy_menu_size Where menu_id = '{id}'";
+                    da = new OracleDataAdapter(sql,db.OracleConnect);
+                    row = da.Fill(ds,"menuSize");
+                    if(row == 0)
+                    {
+                        string temp_sql = $"DELETE FROM envy_menu WHERE menu_id = '{id}'";
+                        try
+                        {
+                            db.openconnect();
+                            OracleCommand orclcmd = new OracleCommand();
+                            orclcmd.CommandType = CommandType.Text;
+                            orclcmd.CommandText = temp_sql;
+                            orclcmd.Connection = db.OracleConnect;
+                            int rowaffected = orclcmd.ExecuteNonQuery();
+                            OnlyMenu();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("กรูณาลบข้อมูลโดยรวมจากตารางAll ก่อน","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        comboBox1.SelectedItem = "All";
+                    }
+                    
+                }
+            }
+                
+            
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == "All")
+            {
+                addmenu_btn.Enabled = true;
+                editmenu_btn.Enabled = true;
+                menuID_Text.Enabled = true;
+                menuName_Text.Enabled = true;
+                menuDetail_Text.Enabled = true;
+                menuType_Text.Enabled = true;
+                menuPrice_Text.Enabled = true;
+                menuSize_Box.Enabled = true;
+                chosefile_btn.Enabled = true;
+                add_size_btn.Enabled = true;
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                radioButton1.Checked = true;
+                refresh();
+            }else if (comboBox1.SelectedItem == "OnlyMenu")
+            {
+                addmenu_btn.Enabled = false;
+                editmenu_btn.Enabled = false;
+                menuID_Text.Enabled = false;
+                menuName_Text.Enabled = false;
+                menuDetail_Text.Enabled = false;
+                menuType_Text.Enabled = false;
+                menuPrice_Text.Enabled = false;
+                menuSize_Box.Enabled = false;
+                chosefile_btn.Enabled = false;
+                add_size_btn.Enabled = false;
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                MessageBox.Show("OnlyMenu ใช้สำหรับลบข้อมูล Menu อย่างเดียว","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                OnlyMenu();
+            }
+        }
+        private void OnlyMenu()
+        {
+            OracleDataAdapter da1, da2;
+            DataSet ds1, ds2;
+            ds1 = new DataSet();
+            ds2 = new DataSet();
+
+            string temp_sql1 = "SELECT menu_id,menuname,detail,type From Envy_Menu";
+
+            da1 = new OracleDataAdapter(temp_sql1, db.OracleConnect);
+
+            da1.Fill(ds1, "menu");
+
+            menu_datagrid.DataSource = ds1;
+            menu_datagrid.DataMember = "menu";
+
+            DataGridViewColumn c1, c2, c3;
+            c1 = menu_datagrid.Columns[1];
+            c2 = menu_datagrid.Columns[2];
+            c3 = menu_datagrid.Columns[3];
+            c1.Width = 175;
+            c2.Width = 180;
+            c3.Width = 120;
+            menu_datagrid.Columns[0].HeaderText = "รหัสสินค้า";
+            menu_datagrid.Columns[1].HeaderText = "ชื่อสินค้า";
+            menu_datagrid.Columns[2].HeaderText = "รายละเอียด";
+            menu_datagrid.Columns[3].HeaderText = "ประเภท";
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            menuID_Text.Enabled = true;
+            menuName_Text.Enabled = false;
+            menuDetail_Text.Enabled = false;
+            menuType_Text.Enabled = false;
+            menuPrice_Text.Enabled = true;
+            menuSize_Box.Enabled = true;
+            chosefile_btn.Enabled = false;
+            pictureBox1.Image = MiniProjectDatabase.Properties.Resources._360_F_296055218_RXc721N9fSYIz3sEV7QALYquMVP31jdJ;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            menuID_Text.Enabled = true;
+            menuName_Text.Enabled = true;
+            menuDetail_Text.Enabled = true;
+            menuType_Text.Enabled = true;
+            menuPrice_Text.Enabled = true;
+            menuSize_Box.Enabled = true;
+            chosefile_btn.Enabled = true;
         }
     }
 }

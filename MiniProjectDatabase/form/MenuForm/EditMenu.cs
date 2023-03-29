@@ -198,7 +198,9 @@ namespace MiniProjectDatabase
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            AddMenu fs = new AddMenu();
+            fs.Visible = true;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
