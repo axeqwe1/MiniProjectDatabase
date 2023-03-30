@@ -257,5 +257,11 @@ namespace MiniProjectDatabase
             
 
         }
+
+        private void history_Click(object sender, EventArgs e)
+        {
+            SaleDetail fs = new SaleDetail();
+            fs.Visible = true;
+        }
     }
 }
