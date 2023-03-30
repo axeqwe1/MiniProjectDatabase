@@ -177,15 +177,7 @@ namespace MiniProjectDatabase.form
 
         private void sizeID_text_KeyPress(object sender, KeyPressEventArgs e)
         {
-            int num = Convert.ToInt32(e.KeyChar);
-            if ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57 || num == 8)
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+           
         }
     }
 }
