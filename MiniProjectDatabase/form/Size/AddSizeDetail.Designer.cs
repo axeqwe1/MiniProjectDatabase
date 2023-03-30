@@ -58,7 +58,7 @@ namespace MiniProjectDatabase.form
             // 
             this.sizeName_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sizeName_text.Location = new System.Drawing.Point(87, 90);
-            this.sizeName_text.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sizeName_text.Margin = new System.Windows.Forms.Padding(2);
             this.sizeName_text.Name = "sizeName_text";
             this.sizeName_text.Size = new System.Drawing.Size(98, 26);
             this.sizeName_text.TabIndex = 1;
@@ -78,7 +78,7 @@ namespace MiniProjectDatabase.form
             // 
             this.sizeID_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sizeID_text.Location = new System.Drawing.Point(87, 61);
-            this.sizeID_text.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sizeID_text.Margin = new System.Windows.Forms.Padding(2);
             this.sizeID_text.Name = "sizeID_text";
             this.sizeID_text.Size = new System.Drawing.Size(98, 26);
             this.sizeID_text.TabIndex = 3;
@@ -87,25 +87,29 @@ namespace MiniProjectDatabase.form
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(33, 152);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(152, 35);
             this.button1.TabIndex = 4;
             this.button1.Text = "เพิ่มข้อมูล";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.button2.Location = new System.Drawing.Point(437, 7);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(74, 35);
             this.button2.TabIndex = 5;
             this.button2.Text = "ย้อนกลับ";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
+            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
             // label3
             // 
@@ -122,7 +126,7 @@ namespace MiniProjectDatabase.form
             // 
             this.sizedatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sizedatagrid.Location = new System.Drawing.Point(230, 61);
-            this.sizedatagrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sizedatagrid.Margin = new System.Windows.Forms.Padding(2);
             this.sizedatagrid.Name = "sizedatagrid";
             this.sizedatagrid.RowHeadersWidth = 51;
             this.sizedatagrid.RowTemplate.Height = 24;
@@ -144,18 +148,20 @@ namespace MiniProjectDatabase.form
             // size_edit_btn
             // 
             this.size_edit_btn.Location = new System.Drawing.Point(33, 189);
-            this.size_edit_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.size_edit_btn.Margin = new System.Windows.Forms.Padding(2);
             this.size_edit_btn.Name = "size_edit_btn";
             this.size_edit_btn.Size = new System.Drawing.Size(74, 35);
             this.size_edit_btn.TabIndex = 9;
             this.size_edit_btn.Text = "แก้ไขข้อมูล";
             this.size_edit_btn.UseVisualStyleBackColor = true;
             this.size_edit_btn.Click += new System.EventHandler(this.size_edit_btn_Click);
+            this.size_edit_btn.MouseEnter += new System.EventHandler(this.size_edit_btn_MouseEnter);
+            this.size_edit_btn.MouseLeave += new System.EventHandler(this.size_edit_btn_MouseLeave);
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button3.ForeColor = System.Drawing.Color.Blue;
+            this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(110, 189);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 35);
@@ -163,11 +169,14 @@ namespace MiniProjectDatabase.form
             this.button3.Text = "ลบข้อมูล";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
+            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
             // 
             // AddSizeDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(522, 282);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.size_edit_btn);
@@ -180,7 +189,7 @@ namespace MiniProjectDatabase.form
             this.Controls.Add(this.label2);
             this.Controls.Add(this.sizeName_text);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddSizeDetail";
             this.Text = "หน้าต่างเพิ่มขนาดเมนู";
             this.Load += new System.EventHandler(this.AddSizeDetail_Load);

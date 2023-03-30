@@ -130,6 +130,8 @@ namespace MiniProjectDatabase
             this.button2.Text = "ยกเลิก";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
+            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
             // button1
             // 
@@ -141,6 +143,8 @@ namespace MiniProjectDatabase
             this.button1.Text = "เเก้ไข";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
             // pictureBox1
             // 
@@ -162,6 +166,8 @@ namespace MiniProjectDatabase
             this.chosefile_btn.Text = "เลือกรูป";
             this.chosefile_btn.UseVisualStyleBackColor = true;
             this.chosefile_btn.Click += new System.EventHandler(this.chosefile_btn_Click_1);
+            this.chosefile_btn.MouseEnter += new System.EventHandler(this.chosefile_btn_MouseEnter);
+            this.chosefile_btn.MouseLeave += new System.EventHandler(this.chosefile_btn_MouseLeave);
             // 
             // label4
             // 
@@ -206,6 +212,7 @@ namespace MiniProjectDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(938, 320);
             this.Controls.Add(this.comboMenu_SIze);
             this.Controls.Add(this.label6);

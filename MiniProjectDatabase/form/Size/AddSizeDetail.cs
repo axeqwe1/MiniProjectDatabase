@@ -180,5 +180,47 @@ namespace MiniProjectDatabase.form
         {
            
         }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Green;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.White;
+        }
+
+        private void size_edit_btn_MouseEnter(object sender, EventArgs e)
+        {
+            size_edit_btn.BackColor = Color.Green;
+        }
+
+        private void size_edit_btn_MouseLeave(object sender, EventArgs e)
+        {
+            size_edit_btn.BackColor = Color.White;
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.Red;
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.White;
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Red;
+
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.White;
+
+        }
     }
 }

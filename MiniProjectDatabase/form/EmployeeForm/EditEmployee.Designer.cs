@@ -144,6 +144,8 @@ namespace MiniProjectDatabase
             this.CANCEL_EDIT_EMP.Text = "ยกเลิก";
             this.CANCEL_EDIT_EMP.UseVisualStyleBackColor = true;
             this.CANCEL_EDIT_EMP.Click += new System.EventHandler(this.CANCEL_EDIT_EMP_Click);
+            this.CANCEL_EDIT_EMP.MouseEnter += new System.EventHandler(this.CANCEL_EDIT_EMP_MouseEnter);
+            this.CANCEL_EDIT_EMP.MouseLeave += new System.EventHandler(this.CANCEL_EDIT_EMP_MouseLeave);
             // 
             // SAVE_EDIT_EMP
             // 
@@ -155,11 +157,14 @@ namespace MiniProjectDatabase
             this.SAVE_EDIT_EMP.Text = "บันทึกข้อมูล";
             this.SAVE_EDIT_EMP.UseVisualStyleBackColor = true;
             this.SAVE_EDIT_EMP.Click += new System.EventHandler(this.SAVE_EDIT_EMP_Click);
+            this.SAVE_EDIT_EMP.MouseEnter += new System.EventHandler(this.SAVE_EDIT_EMP_MouseEnter);
+            this.SAVE_EDIT_EMP.MouseLeave += new System.EventHandler(this.SAVE_EDIT_EMP_MouseLeave);
             // 
             // EditEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(516, 288);
             this.Controls.Add(this.CANCEL_EDIT_EMP);
             this.Controls.Add(this.SAVE_EDIT_EMP);

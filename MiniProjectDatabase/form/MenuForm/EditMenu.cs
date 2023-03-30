@@ -258,6 +258,37 @@ namespace MiniProjectDatabase
             reader.Close();
             
         }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Green;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.White;
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Red;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.White;
+        }
+
+        private void chosefile_btn_MouseEnter(object sender, EventArgs e)
+        {
+            chosefile_btn.BackColor = Color.Green;
+        }
+
+        private void chosefile_btn_MouseLeave(object sender, EventArgs e)
+        {
+            chosefile_btn.BackColor = Color.White;
+        }
+
         private void EditMenu_Load(object sender, EventArgs e)
         {
             

@@ -100,5 +100,25 @@ namespace MiniProjectDatabase
         {
 
         }
+
+        private void CANCEL_EDIT_EMP_MouseEnter(object sender, EventArgs e)
+        {
+            CANCEL_EDIT_EMP.BackColor = Color.Red;
+        }
+
+        private void CANCEL_EDIT_EMP_MouseLeave(object sender, EventArgs e)
+        {
+            CANCEL_EDIT_EMP.BackColor = Color.White;
+        }
+
+        private void SAVE_EDIT_EMP_MouseEnter(object sender, EventArgs e)
+        {
+            SAVE_EDIT_EMP.BackColor = Color.Green;
+        }
+
+        private void SAVE_EDIT_EMP_MouseLeave(object sender, EventArgs e)
+        {
+            SAVE_EDIT_EMP.BackColor = Color.White;
+        }
     }
 }

@@ -124,6 +124,8 @@ namespace MiniProjectDatabase.form
             this.chosefile_btn.Text = "เลือกรูปภาพ";
             this.chosefile_btn.UseVisualStyleBackColor = true;
             this.chosefile_btn.Click += new System.EventHandler(this.chosefile_btn_Click);
+            this.chosefile_btn.MouseEnter += new System.EventHandler(this.chosefile_btn_MouseEnter);
+            this.chosefile_btn.MouseLeave += new System.EventHandler(this.chosefile_btn_MouseLeave);
             // 
             // label3
             // 
@@ -155,6 +157,9 @@ namespace MiniProjectDatabase.form
             this.addmenu_btn.Text = "เพิ่มเมนู";
             this.addmenu_btn.UseVisualStyleBackColor = true;
             this.addmenu_btn.Click += new System.EventHandler(this.addmenu_btn_Click);
+            this.addmenu_btn.MouseEnter += new System.EventHandler(this.addmenu_btn_MouseEnter);
+            this.addmenu_btn.MouseLeave += new System.EventHandler(this.addmenu_btn_MouseLeave);
+            this.addmenu_btn.MouseMove += new System.Windows.Forms.MouseEventHandler(this.addmenu_btn_MouseMove);
             // 
             // menu_datagrid
             // 
@@ -178,6 +183,8 @@ namespace MiniProjectDatabase.form
             this.cancel_btn.Text = "ย้อนกลับ";
             this.cancel_btn.UseVisualStyleBackColor = true;
             this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
+            this.cancel_btn.MouseEnter += new System.EventHandler(this.cancel_btn_MouseEnter);
+            this.cancel_btn.MouseLeave += new System.EventHandler(this.cancel_btn_MouseLeave);
             // 
             // label4
             // 
@@ -235,16 +242,18 @@ namespace MiniProjectDatabase.form
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.ForeColor = System.Drawing.Color.Gold;
-            this.button1.Location = new System.Drawing.Point(731, 455);
+            this.button1.BackColor = System.Drawing.Color.Gainsboro;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(731, 447);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 38);
+            this.button1.Size = new System.Drawing.Size(165, 46);
             this.button1.TabIndex = 17;
             this.button1.Text = "ลบเมนู";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
             // add_size_btn
             // 
@@ -256,6 +265,8 @@ namespace MiniProjectDatabase.form
             this.add_size_btn.Text = "เพิ่มขนาดภาชนะ";
             this.add_size_btn.UseVisualStyleBackColor = true;
             this.add_size_btn.Click += new System.EventHandler(this.add_size_btn_Click);
+            this.add_size_btn.MouseEnter += new System.EventHandler(this.add_size_btn_MouseEnter);
+            this.add_size_btn.MouseLeave += new System.EventHandler(this.add_size_btn_MouseLeave);
             // 
             // pictureBox1
             // 
@@ -276,6 +287,8 @@ namespace MiniProjectDatabase.form
             this.editmenu_btn.Text = "แก้ไขเมนู";
             this.editmenu_btn.UseVisualStyleBackColor = true;
             this.editmenu_btn.Click += new System.EventHandler(this.editmenu_btn_Click);
+            this.editmenu_btn.MouseEnter += new System.EventHandler(this.editmenu_btn_MouseEnter);
+            this.editmenu_btn.MouseLeave += new System.EventHandler(this.editmenu_btn_MouseLeave);
             // 
             // menuID_Text
             // 
@@ -365,6 +378,7 @@ namespace MiniProjectDatabase.form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(950, 810);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);

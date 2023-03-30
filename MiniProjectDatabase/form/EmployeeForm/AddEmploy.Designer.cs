@@ -60,12 +60,14 @@ namespace MiniProjectDatabase
             this.CANCEL_EMP.Text = "ย้อนกลับ";
             this.CANCEL_EMP.UseVisualStyleBackColor = true;
             this.CANCEL_EMP.Click += new System.EventHandler(this.CANCEL_EMP_Click);
+            this.CANCEL_EMP.MouseEnter += new System.EventHandler(this.CANCEL_EMP_MouseEnter);
+            this.CANCEL_EMP.MouseLeave += new System.EventHandler(this.CANCEL_EMP_MouseLeave);
             // 
             // DELETE_EMP
             // 
-            this.DELETE_EMP.BackColor = System.Drawing.Color.Red;
+            this.DELETE_EMP.BackColor = System.Drawing.Color.Gainsboro;
             this.DELETE_EMP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.DELETE_EMP.ForeColor = System.Drawing.Color.Yellow;
+            this.DELETE_EMP.ForeColor = System.Drawing.Color.Black;
             this.DELETE_EMP.Location = new System.Drawing.Point(526, 574);
             this.DELETE_EMP.Margin = new System.Windows.Forms.Padding(2);
             this.DELETE_EMP.Name = "DELETE_EMP";
@@ -74,6 +76,8 @@ namespace MiniProjectDatabase
             this.DELETE_EMP.Text = "ลบข้อมูล";
             this.DELETE_EMP.UseVisualStyleBackColor = false;
             this.DELETE_EMP.Click += new System.EventHandler(this.DELETE_EMP_Click);
+            this.DELETE_EMP.MouseEnter += new System.EventHandler(this.DELETE_EMP_MouseEnter);
+            this.DELETE_EMP.MouseLeave += new System.EventHandler(this.DELETE_EMP_MouseLeave_1);
             // 
             // EDIT_EMP
             // 
@@ -86,6 +90,8 @@ namespace MiniProjectDatabase
             this.EDIT_EMP.Text = "แก้ไขข้อมูล";
             this.EDIT_EMP.UseVisualStyleBackColor = true;
             this.EDIT_EMP.Click += new System.EventHandler(this.EDIT_EMP_Click);
+            this.EDIT_EMP.MouseEnter += new System.EventHandler(this.EDIT_EMP_MouseEnter);
+            this.EDIT_EMP.MouseLeave += new System.EventHandler(this.EDIT_EMP_MouseLeave);
             // 
             // label7
             // 
@@ -129,6 +135,8 @@ namespace MiniProjectDatabase
             this.CLEAR_EMP.Text = "ล้างข้อมูล";
             this.CLEAR_EMP.UseVisualStyleBackColor = true;
             this.CLEAR_EMP.Click += new System.EventHandler(this.CLEAR_EMP_Click);
+            this.CLEAR_EMP.MouseEnter += new System.EventHandler(this.CLEAR_EMP_MouseEnter);
+            this.CLEAR_EMP.MouseLeave += new System.EventHandler(this.CLEAR_EMP_MouseLeave);
             // 
             // ADD_EMP
             // 
@@ -141,6 +149,8 @@ namespace MiniProjectDatabase
             this.ADD_EMP.Text = "เพิ่มข้อมูล";
             this.ADD_EMP.UseVisualStyleBackColor = true;
             this.ADD_EMP.Click += new System.EventHandler(this.ADD_EMP_Click);
+            this.ADD_EMP.MouseEnter += new System.EventHandler(this.ADD_EMP_MouseEnter);
+            this.ADD_EMP.MouseLeave += new System.EventHandler(this.ADD_EMP_MouseLeave);
             // 
             // label5
             // 
@@ -249,6 +259,7 @@ namespace MiniProjectDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(659, 623);
             this.Controls.Add(this.CANCEL_EMP);
             this.Controls.Add(this.DELETE_EMP);

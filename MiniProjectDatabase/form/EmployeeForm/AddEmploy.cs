@@ -179,5 +179,56 @@ namespace MiniProjectDatabase
             }
 
         }
+
+        private void EDIT_EMP_MouseEnter(object sender, EventArgs e)
+        {
+            EDIT_EMP.BackColor = Color.Green;
+        }
+
+        private void EDIT_EMP_MouseLeave(object sender, EventArgs e)
+        {
+            EDIT_EMP.BackColor = Color.White;
+        }
+
+        private void DELETE_EMP_MouseEnter(object sender, EventArgs e)
+        {
+            DELETE_EMP.BackColor = Color.Red;
+
+        }
+
+        private void DELETE_EMP_MouseLeave_1(object sender, EventArgs e)
+        {
+            DELETE_EMP.BackColor = Color.White;
+        }
+
+        private void CLEAR_EMP_MouseEnter(object sender, EventArgs e)
+        {
+            CLEAR_EMP.BackColor = Color.Red;
+        }
+
+        private void CLEAR_EMP_MouseLeave(object sender, EventArgs e)
+        {
+            CLEAR_EMP.BackColor = Color.White;
+        }
+
+        private void ADD_EMP_MouseEnter(object sender, EventArgs e)
+        {
+            ADD_EMP.BackColor = Color.Green;
+        }
+
+        private void ADD_EMP_MouseLeave(object sender, EventArgs e)
+        {
+            ADD_EMP.BackColor = Color.White;
+        }
+
+        private void CANCEL_EMP_MouseEnter(object sender, EventArgs e)
+        {
+            CANCEL_EMP.BackColor = Color.Red;
+        }
+
+        private void CANCEL_EMP_MouseLeave(object sender, EventArgs e)
+        {
+            CANCEL_EMP.BackColor = Color.White;
+        }
     }
 }

@@ -56,5 +56,15 @@ namespace MiniProjectDatabase.form
             mn.Visible = true;
             this.Close();
         }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Red;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.White;
+        }
     }
 }

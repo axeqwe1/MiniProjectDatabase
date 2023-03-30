@@ -582,5 +582,72 @@ namespace MiniProjectDatabase.form
         {
 
         }
+
+        private void add_size_btn_MouseEnter(object sender, EventArgs e)
+        {
+            add_size_btn.BackColor = Color.Green;
+        }
+
+        private void add_size_btn_MouseLeave(object sender, EventArgs e)
+        {
+            add_size_btn.BackColor = Color.White;
+        }
+
+        private void addmenu_btn_MouseEnter(object sender, EventArgs e)
+        {
+            addmenu_btn.BackColor = Color.Green;
+        }
+
+        private void addmenu_btn_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void addmenu_btn_MouseLeave(object sender, EventArgs e)
+        {
+            addmenu_btn.BackColor = Color.White;
+        }
+
+        private void editmenu_btn_MouseEnter(object sender, EventArgs e)
+        {
+            editmenu_btn.BackColor = Color.Green;
+        }
+
+        private void editmenu_btn_MouseLeave(object sender, EventArgs e)
+        {
+            editmenu_btn.BackColor = Color.White;
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Red;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.White;
+        }
+
+        private void cancel_btn_MouseEnter(object sender, EventArgs e)
+        {
+            cancel_btn.BackColor = Color.Red;
+        }
+
+        private void cancel_btn_MouseLeave(object sender, EventArgs e)
+        {
+            cancel_btn.BackColor = Color.White;
+        }
+
+        private void chosefile_btn_MouseEnter(object sender, EventArgs e)
+        {
+            chosefile_btn.BackColor = Color.Green;
+
+        }
+
+        private void chosefile_btn_MouseLeave(object sender, EventArgs e)
+        {
+            chosefile_btn.BackColor = Color.White;
+
+        }
     }
 }
