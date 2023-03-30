@@ -121,7 +121,7 @@ namespace MiniProjectDatabase
                 string sql2 = "SELECT envy_menu_size.price ";
                 sql2 += "FROM envy_menu_size inner join envy_menu on envy_menu_size.menu_id = envy_menu.menu_id ";
                 sql2 += "inner join envy_size on envy_size.size_id = envy_menu_size.size_id ";
-                sql2 += $"WHERE envy_menu.menu_id = {obj.MenuID} AND envy_size.size_id = {sz.GetSizeID}";
+                sql2 += $"WHERE envy_menu.menu_id = '{obj.MenuID}' AND envy_size.size_id = '{sz.GetSizeID}'";
                 int count = 0;
                 OracleCommand orcl = new OracleCommand(sql2, db.OracleConnect);
                 OracleDataReader reader = orcl.ExecuteReader();
@@ -251,17 +251,22 @@ namespace MiniProjectDatabase
                     }
                     
                 }
+
                 SaleForm fs = new SaleForm(list, cmb_main.SelectedValue.ToString());
                 fs.Visible = true;
+                this.Hide();
             }
+            
             
 
         }
 
         private void history_Click(object sender, EventArgs e)
         {
+            
             SaleDetail fs = new SaleDetail();
             fs.Visible = true;
+            this.Hide();
         }
     }
 }

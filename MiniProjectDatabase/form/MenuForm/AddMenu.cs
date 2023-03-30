@@ -310,6 +310,8 @@ namespace MiniProjectDatabase.form
         {
             AddSizeDetail fs = new AddSizeDetail();
             fs.Visible = true;
+            this.Hide();
+            
         }
 
         private void editmenu_btn_Click(object sender, EventArgs e)

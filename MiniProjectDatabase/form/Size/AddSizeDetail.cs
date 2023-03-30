@@ -101,6 +101,7 @@ namespace MiniProjectDatabase.form
         {
             this.Close();
             AddMenu fs = new AddMenu();
+            fs.Visible = true;
             fs.refresh();
         }
 

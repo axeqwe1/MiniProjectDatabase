@@ -46,7 +46,15 @@ namespace MiniProjectDatabase.form
 
         private void SaleDetail_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             refresh();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Main mn = new Main();
+            mn.Visible = true;
+            this.Close();
         }
     }
 }
