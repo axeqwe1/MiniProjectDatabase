@@ -157,19 +157,17 @@ namespace MiniProjectDatabase
             dataGridView1.Columns[3].Name = "ราคา";
             dataGridView1.Columns[4].Name = "จำนวน";
 
-            AddEmploy comboEMP = new AddEmploy();
-            DataGridView dataGridView = comboEMP.EMP_dataGrid;
+            OracleDataAdapter da;
+            DataSet ds = new DataSet();
+            string SQL = "SELECT * FROM envy_employee";
 
-            if (dataGridView != null)
-            {
-                List<string> empFNAME = new List<string>();
-                foreach (DataGridViewRow row in dataGridView.Rows)
-                {
-                    string firstnameEMP = row.Cells[1].Value.ToString();
-                    empFNAME.Add(firstnameEMP);
-                }
-                cmb_main.DataSource = empFNAME;
-            }
+            da = new OracleDataAdapter(SQL,db.OracleConnect);
+
+            da.Fill(ds,"Employee");
+
+            cmb_main.DataSource = ds.Tables["Employee"];
+            cmb_main.DisplayMember = "FNAME";
+            cmb_main.ValueMember = "EMP_ID";
             GenerateControl();
 
         }
@@ -249,11 +247,11 @@ namespace MiniProjectDatabase
                     //list.Add(new SaleList { NAME = s.Cells[0].Value.ToString(),})
                     if(s.Cells[0].Value != null)
                     {
-                        list.Add(new SaleList { NAME = s.Cells[0].Value.ToString(),DETAIL = s.Cells[1].Value.ToString(),SIZE = s.Cells[2].Value.ToString(),PRICE = double.Parse(s.Cells[3].Value.ToString()),QTY = int.Parse(s.Cells[4].Value.ToString()) });
+                        list.Add(new SaleList { NAME = s.Cells[0].Value.ToString(), DETAIL = s.Cells[1].Value.ToString(), SIZE = s.Cells[2].Value.ToString(), PRICE = double.Parse(s.Cells[3].Value.ToString()), QTY = int.Parse(s.Cells[4].Value.ToString()) });
                     }
                     
                 }
-                SaleForm fs = new SaleForm(list);
+                SaleForm fs = new SaleForm(list, cmb_main.SelectedValue.ToString());
                 fs.Visible = true;
             }
             

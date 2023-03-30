@@ -16,5 +16,7 @@ namespace MiniProjectDatabase.form
         {
             InitializeComponent();
         }
+
+
     }
 }

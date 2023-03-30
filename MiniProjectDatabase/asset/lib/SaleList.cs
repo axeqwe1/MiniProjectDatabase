@@ -13,6 +13,7 @@ namespace MiniProjectDatabase.asset.lib
         string size;
         double price;
         int qty;
+        string employee;
 
         public string NAME
         {
@@ -38,6 +39,11 @@ namespace MiniProjectDatabase.asset.lib
         {
             get { return qty; }
             set { qty = value; }
+        }
+        public string EMP
+        {
+            get { return employee; }
+            set { employee = value; }
         }
     }
 }

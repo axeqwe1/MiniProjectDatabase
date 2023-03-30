@@ -40,6 +40,10 @@ namespace MiniProjectDatabase.asset.database
             }
             
         }
+        public void closeconnect()
+        {
+            ORCL.Close();
+        }
         public bool CheckState()
         {
             if(OracleConnect.State == System.Data.ConnectionState.Closed)
