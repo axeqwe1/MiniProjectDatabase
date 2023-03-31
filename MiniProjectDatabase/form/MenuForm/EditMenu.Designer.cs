@@ -230,6 +230,7 @@ namespace MiniProjectDatabase
             this.Controls.Add(this.txtMenu_Detail);
             this.Controls.Add(this.txtMenu_Name);
             this.Controls.Add(this.txtMenu_ID);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EditMenu";
             this.Text = "หน้าต่างแก้ไขเมนู";
             this.Load += new System.EventHandler(this.EditMenu_Load);

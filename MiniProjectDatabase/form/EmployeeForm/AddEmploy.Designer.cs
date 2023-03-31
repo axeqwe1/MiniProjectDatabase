@@ -279,6 +279,7 @@ namespace MiniProjectDatabase
             this.Controls.Add(this.txtFNAME_EMP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.EMP_datagridview);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddEmploy";
             this.Text = "หน้าต่างพนักงานขาย";
             this.Load += new System.EventHandler(this.AddEmploy_Load);

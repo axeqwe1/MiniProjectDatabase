@@ -12,7 +12,8 @@ namespace MiniProjectDatabase.asset.database
         OracleConnection ORCL;
         // private string ip = "192.168.142.128";
         //private string ip = "192.168.27.128";
-        private string ip = "192.168.11.128";
+        //private string ip = "192.168.11.128";
+        private string ip = "192.168.222.128";
         private string id = "ora1";
         private string password = "ora1";
 

@@ -189,6 +189,7 @@ namespace MiniProjectDatabase.form
             this.Controls.Add(this.label2);
             this.Controls.Add(this.sizeName_text);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddSizeDetail";
             this.Text = "หน้าต่างเพิ่มขนาดเมนู";
